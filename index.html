@@ -1,0 +1,2016 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Miracle Home Phase II | Premium Living near Ayodhya Highway</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Miracle Home Phase II by Max Miracle Buildcare LLP. A secured gated community near Ayodhya Highway, Lucknow, offering premium amenities and modern living." />
+  <meta name="keywords"
+    content="Miracle Home Phase II, Max Miracle, Ayodhya Highway, Lucknow, Gated Community, Luxury Flats" />
+  <meta name="author" content="MAX MIRACLE BUILDCARE LLP" />
+  <meta name="theme-color" content="#0f172a" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary: #0f172a;
+      --accent: #ca8a04;
+      /* Gold/Amber */
+      --accent-light: #fef3c7;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --bg-light: #f8fafc;
+      --white: #ffffff;
+      --glass: rgba(255, 255, 255, 0.05);
+      --glass-border: rgba(255, 255, 255, 0.1);
+      --shadow-premium: 0 20px 50px rgba(0, 0, 0, 0.1);
+      --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--white);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg-light);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--primary);
+      border-radius: 10px;
+    }
+
+    /* Top Announcement Bar */
+    .top-bar {
+      background: var(--primary);
+      color: var(--white);
+      padding: 10px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 1001;
+      position: relative;
+    }
+
+    .top-bar-highlights {
+      display: flex;
+      gap: 20px;
+    }
+
+    .top-bar-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .top-bar-item i {
+      color: var(--accent);
+    }
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      padding: 0;
+      transition: var(--transition);
+      background: transparent;
+    }
+
+    header .nav-container {
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    header.scrolled {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    header.scrolled .nav-container {
+      padding: 15px 8%;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      text-decoration: none;
+      z-index: 1002;
+    }
+
+    .logo-img {
+      height: 50px;
+      width: auto;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+      transition: var(--transition);
+    }
+
+    .logo-text h1 {
+      font-size: 22px;
+      font-weight: 950;
+      color: var(--white);
+      margin: 0;
+      letter-spacing: -1px;
+      text-transform: uppercase;
+    }
+
+    .logo-text span {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    header.scrolled .logo-text h1 {
+      color: var(--primary);
+    }
+
+    header.scrolled .logo-text span {
+      color: var(--text-muted);
+    }
+
+    nav {
+      display: flex;
+      gap: 35px;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 14px;
+      font-weight: 600;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    header.scrolled nav a {
+      color: var(--text-main);
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: var(--transition);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .btn-nav {
+      background: var(--accent);
+      color: var(--white);
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 10px 20px rgba(202, 138, 4, 0.3);
+    }
+
+    .btn-nav:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(202, 138, 4, 0.4);
+    }
+
+    .nav-toggle {
+      display: none;
+      color: var(--white);
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    header.scrolled .nav-toggle {
+      color: var(--primary);
+    }
+
+    /* Hero Section REDESIGN */
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 120px 8% 80px;
+      background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url('P1119337.JPG.jpeg') center/cover no-repeat fixed;
+      overflow: hidden;
+    }
+
+    .hero-container {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 60px;
+      align-items: center;
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-content {
+      color: var(--white);
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 8vw, 90px);
+      line-height: 1;
+      margin-bottom: 10px;
+      font-weight: 950;
+      letter-spacing: -4px;
+      text-transform: uppercase;
+      animation: fadeInUp 1s ease;
+    }
+
+    .hero-subtitle {
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 30px;
+      display: block;
+      animation: fadeInUp 1s ease 0.2s both;
+    }
+
+    .brand-attribution {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      animation: fadeInUp 1s ease 0.4s both;
+    }
+
+    /* USP BAR */
+    .usp-bar {
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin-top: 50px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      animation: fadeInUp 1s ease 0.6s both;
+    }
+
+    .usp-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .usp-item i {
+      color: var(--accent);
+      font-size: 18px;
+    }
+
+    /* Hero Form */
+    /* Hero Form Redesign - Solid Premium */
+    .hero-form-box {
+      background: #1e293b;
+      /* Premium Dark Navy */
+      border: 1px solid rgba(202, 138, 4, 0.2);
+      padding: 45px 40px;
+      border-radius: 24px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+      animation: fadeInUp 1s ease 0.6s both;
+      position: relative;
+    }
+
+    .hero-form-box h3 {
+      color: var(--white);
+      font-size: 26px;
+      margin-bottom: 5px;
+      font-weight: 800;
+    }
+
+    .hero-form-box p {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 14px;
+      margin-bottom: 35px;
+    }
+
+    .hero-form-box .form-group {
+      margin-bottom: 25px;
+      position: relative;
+    }
+
+    .hero-form-box .form-group label {
+      position: absolute;
+      left: 15px;
+      top: 18px;
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 16px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      pointer-events: none;
+      background: #1e293b;
+      padding: 0 5px;
+    }
+
+    .hero-form-box input,
+    .hero-form-box select {
+      width: 100%;
+      padding: 18px 15px;
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      color: var(--white);
+      font-size: 16px;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .hero-form-box input:focus,
+    .hero-form-box select:focus {
+      border-color: var(--accent);
+    }
+
+    /* Floating Label Animation */
+    .hero-form-box input:focus+label,
+    .hero-form-box input:not(:placeholder-shown)+label,
+    .hero-form-box select:focus+label,
+    .hero-form-box select:not([value=""])+label {
+      top: -10px;
+      left: 12px;
+      font-size: 12px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .hero-form-box input::placeholder {
+      color: transparent;
+    }
+
+    .hero-form-box select option {
+      background: #1e293b;
+      color: var(--white);
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 20px;
+      justify-content: flex-end;
+      animation: fadeInUp 1s ease 0.6s both;
+      margin-top: 10px;
+    }
+
+    .btn-primary {
+      padding: 18px 40px;
+      background: var(--accent);
+      color: var(--white);
+      border-radius: 12px;
+      font-weight: 800;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 16px;
+    }
+
+    .btn-secondary {
+      padding: 18px 40px;
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 12px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 16px;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 40px rgba(202, 138, 4, 0.4);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--white);
+    }
+
+    /* Sections General */
+    section {
+      padding: 120px 8%;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .section-header span {
+      color: var(--accent);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 14px;
+    }
+
+    .section-header h2 {
+      font-size: 45px;
+      color: var(--primary);
+      font-weight: 800;
+      margin-top: 10px;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 15px auto 0;
+      font-size: 18px;
+    }
+
+    /* Overview Section */
+    .overview {
+      background: var(--bg-light);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .overview-content h3 {
+      font-size: 32px;
+      color: var(--primary);
+      margin-bottom: 25px;
+      font-weight: 800;
+    }
+
+    .overview-content p {
+      font-size: 17px;
+      color: var(--text-muted);
+      margin-bottom: 35px;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .feature-item i {
+      width: 40px;
+      height: 40px;
+      background: var(--white);
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .overview-image {
+      position: relative;
+    }
+
+    .overview-image img {
+      width: 100%;
+      border-radius: 30px;
+      box-shadow: var(--shadow-premium);
+    }
+
+    /* Amenities Paragraph REDESIGN */
+    .amenities-content {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .amenities-content p {
+      margin-bottom: 20px;
+    }
+
+    /* Connectivity Section */
+    .connectivity {
+      background: var(--bg-light);
+    }
+
+    .location-card {
+      background: var(--white);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .location-stat {
+      text-align: center;
+    }
+
+    .location-stat h4 {
+      font-size: 24px;
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    .location-stat p {
+      font-size: 14px;
+      color: var(--text-muted);
+      font-weight: 700;
+    }
+
+    /* Floating Action Buttons */
+    .floating-actions {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 1000;
+    }
+
+    .float-btn {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: var(--white);
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      transition: var(--transition);
+    }
+
+    .float-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-whatsapp {
+      background: #25d366;
+    }
+
+    .btn-call {
+      background: var(--primary);
+    }
+
+    /* CTA Embedded Form */
+    .cta-form-section {
+      background: var(--primary);
+      color: var(--white);
+      border-radius: 40px;
+      margin: 60px 8%;
+      padding: 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .cta-info h2 {
+      color: var(--white);
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    .cta-pointer {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .pointer-icon {
+      font-size: 40px;
+      animation: pointRight 1s infinite alternate;
+    }
+
+    @keyframes pointRight {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(15px);
+      }
+    }
+
+    .brochure-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 30px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 25px;
+      transition: var(--transition);
+    }
+
+    .brochure-btn:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* Gallery Section */
+    .gallery {
+      background: var(--white);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 300px;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent, rgba(15, 23, 42, 0.8));
+      display: flex;
+      align-items: flex-end;
+      padding: 30px;
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-overlay span {
+      color: var(--white);
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    /* Specifications Accordion */
+    .specs {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .specs .section-header h2 {
+      color: var(--white);
+    }
+
+    .specs .section-header p {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .specs-list {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .spec-item {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .spec-header {
+      padding: 30px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .spec-header:hover {
+      color: var(--accent);
+    }
+
+    .spec-header h4 {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .spec-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: var(--transition);
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 16px;
+    }
+
+    .spec-item.active .spec-content {
+      max-height: 300px;
+      padding-bottom: 30px;
+    }
+
+    .spec-item.active .spec-header {
+      color: var(--accent);
+    }
+
+    /* Pricing Table */
+    .pricing-table-container {
+      overflow-x: auto;
+      background: var(--white);
+      border-radius: 20px;
+      box-shadow: var(--shadow-premium);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 800px;
+    }
+
+    th {
+      background: var(--bg-light);
+      font-weight: 800;
+      color: var(--primary);
+      padding: 20px;
+      text-align: left;
+      border-bottom: 2px solid var(--accent-light);
+    }
+
+    td {
+      padding: 20px;
+      border-bottom: 1px solid var(--bg-light);
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    tr:hover {
+      background: var(--bg-light);
+    }
+
+    /* Contact Section */
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .contact-info h3 {
+      font-size: 35px;
+      color: var(--primary);
+      margin-bottom: 20px;
+      font-weight: 800;
+    }
+
+    .contact-info p {
+      font-size: 18px;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .detail-item {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .detail-item i {
+      width: 50px;
+      height: 50px;
+      background: var(--accent-light);
+      color: var(--accent);
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .detail-item h5 {
+      font-size: 14px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .detail-item p {
+      font-size: 16px;
+      color: var(--primary);
+      font-weight: 700;
+      margin: 3px 0 0;
+    }
+
+    .contact-form {
+      background: var(--white);
+      padding: 50px;
+      border-radius: 30px;
+      box-shadow: var(--shadow-premium);
+      border: 1px solid var(--bg-light);
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 15px;
+      border-radius: 12px;
+      border: 2px solid var(--bg-light);
+      outline: none;
+      transition: var(--transition);
+      font-size: 16px;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      background: var(--white);
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 18px;
+      background: var(--primary);
+      color: var(--white);
+      border-radius: 12px;
+      border: none;
+      font-weight: 800;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 16px;
+    }
+
+    .btn-submit:hover {
+      background: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Modal / Popup */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(10px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+      padding: 20px;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .modal-content {
+      background: var(--white);
+      width: 100%;
+      max-width: 550px;
+      border-radius: 30px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 30px 100px rgba(0, 0, 0, 0.5);
+      animation: modalSlideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
+      color: var(--text-muted);
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      background: var(--bg-light);
+      border-radius: 50%;
+      z-index: 10;
+      transition: var(--transition);
+    }
+
+    .modal-close:hover {
+      background: var(--accent);
+      color: var(--white);
+      transform: rotate(90deg);
+    }
+
+    .modal-header {
+      background: var(--primary);
+      padding: 40px;
+      color: var(--white);
+    }
+
+    .modal-header h3 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .modal-header p {
+      opacity: 0.7;
+      font-size: 16px;
+    }
+
+    .modal-body {
+      padding: 40px;
+    }
+
+    /* Footer */
+    footer {
+      padding: 80px 8% 40px;
+      background: #070b14;
+      color: var(--white);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+
+    .footer-col h4 {
+      font-size: 18px;
+      margin-bottom: 30px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .footer-col p {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 15px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px 25px;
+      margin-top: 10px;
+    }
+
+    .footer-links li {
+      margin-bottom: 0;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+      padding-left: 5px;
+    }
+
+    .footer-bottom {
+      padding-top: 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes modalSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hero {
+        padding: 120px 5% 60px;
+        text-align: center;
+      }
+
+      .hero-container {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 50px;
+      }
+
+      .hero-content {
+        text-align: center;
+        align-items: center;
+      }
+
+      .hero-btns,
+      .usp-bar,
+      .brand-attribution {
+        justify-content: center;
+      }
+
+      .hero p {
+        margin: 0 auto 30px;
+      }
+
+      .overview,
+      .contact {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero h1 {
+        font-size: 50px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .cta-form-section {
+        padding: 50px 5%;
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 40px;
+        text-align: center;
+      }
+
+      .cta-info h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+      }
+
+      .cta-pointer {
+        display: none;
+      }
+
+      .brochure-btn {
+        margin: 0 auto;
+        display: flex;
+        width: fit-content;
+      }
+
+      .contact-form {
+        padding: 30px 20px !important;
+        margin-top: 0;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .footer-brand .logo-container {
+        justify-content: center;
+      }
+
+      .footer-brand p:last-child {
+        display: none;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        text-align: left;
+      }
+
+      .footer-col h4 {
+        font-size: 16px;
+        margin-bottom: 15px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+
+      .top-bar {
+        padding: 5px 5%;
+        font-size: 11px;
+      }
+
+      .top-bar-highlights {
+        gap: 10px;
+      }
+
+      header .nav-container {
+        padding: 12px 5%;
+      }
+
+      .logo-text {
+        display: none;
+      }
+
+      .logo-img {
+        height: 40px;
+      }
+
+      nav {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        height: 100vh;
+        background: var(--white);
+        flex-direction: column;
+        padding: 80px 40px;
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 20px 0 50px rgba(0, 0, 0, 0.1);
+        z-index: 1001;
+      }
+
+      nav.active {
+        left: 0;
+      }
+
+      .nav-toggle {
+        display: block;
+        color: var(--primary);
+      }
+
+      header.scrolled .nav-toggle {
+        color: var(--primary);
+      }
+
+      nav a {
+        color: var(--primary);
+        font-size: 18px;
+        margin-bottom: 25px;
+        opacity: 0;
+        transform: translateX(-20px);
+        transition: 0.3s ease;
+      }
+
+      nav.active a {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      /* Stagger animations for mobile links */
+      nav.active a:nth-child(1) {
+        transition-delay: 0.1s;
+      }
+
+      nav.active a:nth-child(2) {
+        transition-delay: 0.2s;
+      }
+
+      nav.active a:nth-child(3) {
+        transition-delay: 0.3s;
+      }
+
+      nav.active a:nth-child(4) {
+        transition-delay: 0.4s;
+      }
+
+      nav.active a:nth-child(5) {
+        transition-delay: 0.5s;
+      }
+
+      nav.active a:nth-child(6) {
+        transition-delay: 0.6s;
+      }
+
+      nav.active .btn-nav {
+        transition-delay: 0.7s;
+      }
+
+      .btn-nav {
+        margin-top: 10px;
+        width: 100%;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 45px;
+      }
+
+      .section-header h2 {
+        font-size: 32px;
+      }
+
+      .feature-list {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Popup Modal -->
+  <div class="modal-overlay" id="inquiryModal">
+    <div class="modal-content">
+      <div class="modal-close" onclick="closeModal()">&times;</div>
+      <div class="modal-header">
+        <h3>Begin Your Journey</h3>
+        <p>Expert guidance for your dream home at Miracle Home Phase II.</p>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="handleForm(event)">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="+91" required>
+          </div>
+          <div class="form-group">
+            <label>Interested In</label>
+            <select>
+              <option>Book a Site Visit</option>
+              <option>Request Pricing Sheet</option>
+              <option>General Inquiry</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-submit">Submit Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <header id="header">
+    <div class="top-bar">
+      <div class="top-bar-item"><i>📍</i> Ayodhya Maarg - Safedabad Barabanki</div>
+      <div class="top-bar-highlights">
+        <div class="top-bar-item"><i>✓</i> RERA Approved</div>
+        <div class="top-bar-item"><i>✓</i> Bank Approved</div>
+        <div class="top-bar-item"><i>✓</i> 50+ Families Living</div>
+        <div class="top-bar-item"><i>💰</i> Starting 36 Lacs</div>
+      </div>
+    </div>
+    <div class="nav-container">
+      <a href="#" class="logo-container">
+        <img src="Logo_01_page-0001.jpg" alt="Miracle Homes Logo" class="logo-img">
+        <div class="logo-text">
+          <h1>Miracle Homes</h1>
+          <span>Safedabad, Barabanki</span>
+        </div>
+      </a>
+      <div class="nav-toggle" onclick="toggleNav()">&#9776;</div>
+      <nav id="nav">
+        <a href="#home">Home</a>
+        <a href="#overview">Overview</a>
+        <a href="#amenities">Amenities</a>
+        <a href="#gallery">Showcase</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+        <button class="btn-nav" onclick="scrollToSection('contact')">Book Visit</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-container">
+      <!-- Left: Form -->
+      <div class="hero-form-box">
+        <h3>Quick Inquiry</h3>
+        <p>Take the first step towards your dream home.</p>
+        <form onsubmit="handleForm(event)">
+          <div class="form-group">
+            <input type="text" id="heroName" placeholder=" " required>
+            <label for="heroName">Full Name</label>
+          </div>
+          <div class="form-group">
+            <input type="tel" id="heroPhone" placeholder=" " required>
+            <label for="heroPhone">Mobile Number</label>
+          </div>
+          <div class="form-group">
+            <select id="heroReq" required onchange="this.setAttribute('value', this.value)">
+              <option value="" disabled selected hidden></option>
+              <option value="site-visit">Book Site Visit</option>
+              <option value="pricing">Get Pricing Details</option>
+              <option value="brochure">Project Brochure</option>
+            </select>
+            <label for="heroReq">Requirement</label>
+          </div>
+          <button type="submit" class="btn-submit"
+            style="background: var(--accent); color: var(--white); margin-top: 10px;">Inquire Now</button>
+        </form>
+      </div>
+
+      <!-- Right: Content -->
+      <div class="hero-content">
+        <h1>MIRACLE HOMES</h1>
+        <span class="hero-subtitle">Safedabad, Barabanki</span>
+
+        <p style="font-size: 18px; color: rgba(255, 255, 255, 0.8); margin-bottom: 30px; line-height: 1.6;">
+          Discover a life of elegance and comfort in our premium gated community.<br>
+          Join 50+ happy families already living their dream.
+        </p>
+
+        <div class="hero-btns">
+          <button class="btn-primary" onclick="scrollToSection('overview')">Explore Details</button>
+          <button class="btn-secondary" onclick="scrollToSection('gallery')">View Portfolio</button>
+        </div>
+
+        <div class="brand-attribution">
+          A Project by <strong>Max Infra Ventures</strong>
+        </div>
+
+        <div class="usp-bar">
+          <div class="usp-item"><i>🛡️</i> RERA Registered</div>
+          <div class="usp-item"><i>🏛️</i> Zila Panchayat Approved</div>
+          <div class="usp-item"><i>🏦</i> Bank Approved</div>
+          <div class="usp-item"><i>🏠</i> 50+ Families Living</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview Section -->
+  <section class="overview" id="overview">
+    <div class="overview-image">
+      <img src="P1119307.JPG.jpeg" alt="Miracle Home Entrance">
+    </div>
+    <div class="overview-content">
+      <div class="section-header" style="text-align: left; margin-bottom: 30px;">
+        <span>The Overview</span>
+        <h2>Your Dream Home Awaits</h2>
+      </div>
+      <p>Top-of-the-line amenities and specifications make for a marvelous milieu, adding to your residing pleasure at
+        Miracle Home. Experience the perfect blend of modern architecture and peaceful living.</p>
+
+      <div class="feature-list">
+        <div class="feature-item"><i>🏠</i> Super Area: 1144 SQFT</div>
+        <div class="feature-item"><i>🛡️</i> 24/7 Gated Security</div>
+        <div class="feature-item"><i>🌳</i> Lush Green Park</div>
+        <div class="feature-item"><i>📍</i> Near Ayodhya Highway</div>
+        <div class="feature-item"><i>💡</i> Solar Street Lights</div>
+        <div class="feature-item"><i>🌧️</i> Rainwater Harvesting</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Amenities Section (Simplified Paragraph Form) -->
+  <section id="amenities">
+    <div class="section-header">
+      <span>Lifestyle</span>
+      <h2>World-Class Amenities</h2>
+    </div>
+
+    <div class="amenities-content">
+      <p>Luxury living at Miracle Homes is defined by a curated collection of premium amenities designed for your
+        well-being. Enjoy the convenience of a modern Health Club featuring a fully equipped Gym and Aerobics hall.
+        Relax and celebrate in our spacious Multipurpose Party Hall or find tranquility in the dedicated Yoga and
+        Meditation center.</p>
+      <p>Families will appreciate the safe and engaging Children's Play Area, complete with swings and sand pits. Stay
+        active on our wide, tree-lined jogging tracks that weave through lush green landscapes. Your safety is our
+        priority, with 24/7 CCTV monitoring and a state-of-the-art security control room ensuring total peace of mind
+        for every resident.</p>
+    </div>
+  </section>
+
+  <!-- Connectivity & Nearby Places -->
+  <section class="connectivity" id="connectivity">
+    <div class="section-header">
+      <span>Location Highlights</span>
+      <h2>Perfectly Connected</h2>
+      <p>Everything you need is just a few minutes away.</p>
+    </div>
+
+    <div class="location-card">
+      <div class="location-stat">
+        <h4>400m</h4>
+        <p>From Main Highway</p>
+      </div>
+      <div class="location-stat">
+        <h4>300m</h4>
+        <p>Awadh Law College</p>
+      </div>
+      <div class="location-stat">
+        <h4>500m</h4>
+        <p>Millennium School</p>
+      </div>
+      <div class="location-stat">
+        <h4>1.5km</h4>
+        <p>Hind Medical College</p>
+      </div>
+      <div class="location-stat">
+        <h4>6km</h4>
+        <p>BBD University</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Property Showcase (Gallery) -->
+  <section id="gallery" class="gallery">
+    <div class="section-header">
+      <span>Visual Tour</span>
+      <h2>Property Showcase</h2>
+      <p>A glimpse into the architectural excellence and premium interiors of Miracle Home.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="P1119308.JPG.jpeg" alt="Gated Entrance">
+        <div class="gallery-overlay"><span>Majestic Entry Gate</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="P1119316.JPG.jpeg" alt="Residential Lanes">
+        <div class="gallery-overlay"><span>Serene Residential Lanes</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="P1119320.JPG.jpeg" alt="Premium Living Room">
+        <div class="gallery-overlay"><span>Luxury Living Spaces</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="P1119317.JPG.jpeg" alt="Building Elevation">
+        <div class="gallery-overlay"><span>Modern Architecture</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="P1119318.JPG.jpeg" alt="Exterior Finish">
+        <div class="gallery-overlay"><span>Premium Exterior Finishes</span></div>
+      </div>
+      <div class="gallery-item" onclick="openModal()">
+        <img src="P1119335.JPG.jpeg" alt="Community View">
+        <div class="gallery-overlay" style="background: rgba(202, 138, 4, 0.8); opacity: 0.9;"><span>Inquire for Site
+            Visit</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specifications Section -->
+  <section class="specs" id="specs">
+    <div class="section-header">
+      <span>Technical Excellence</span>
+      <h2>Project Specifications</h2>
+      <p>Crafted with premium materials and structural integrity to last generations.</p>
+    </div>
+
+    <div class="specs-list">
+      <div class="spec-item" onclick="toggleSpec(this)">
+        <div class="spec-header">
+          <h4>Foundation & Structure</h4><span>+</span>
+        </div>
+        <div class="spec-content">R.C.C frame structure of approved mix for maximum durability and earthquake
+          resistance.</div>
+      </div>
+      <div class="spec-item" onclick="toggleSpec(this)">
+        <div class="spec-header">
+          <h4>Walls & Paint</h4><span>+</span>
+        </div>
+        <div class="spec-content">External 9" walls with rustic textured paint. Internal 4.5" walls with Asian/Dulux
+          plastic paint.</div>
+      </div>
+      <div class="spec-item" onclick="toggleSpec(this)">
+        <div class="spec-header">
+          <h4>Flooring</h4><span>+</span>
+        </div>
+        <div class="spec-content">48"x24" Digital Vitrified tiles in Bedrooms, Kitchen, and Living area. Antiskid tiles
+          in Bathrooms and Balcony.</div>
+      </div>
+      <div class="spec-item" onclick="toggleSpec(this)">
+        <div class="spec-header">
+          <h4>Doors & Windows</h4><span>+</span>
+        </div>
+        <div class="spec-content">Teak wood frames with 32" wide laminated Flush doors. Premium glass panes for windows.
+        </div>
+      </div>
+      <div class="spec-item" onclick="toggleSpec(this)">
+        <div class="spec-header">
+          <h4>Kitchen & Bath</h4><span>+</span>
+        </div>
+        <div class="spec-content">Semi-modular kitchen design. Kajaria/Kerovit/Hindware bathroom fittings for a luxury
+          feel.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing">
+    <div class="section-header">
+      <span>Investment</span>
+      <h2>Pricing & Availability</h2>
+      <p>Select your preferred floor and flat. Prices are inclusive of GST.</p>
+    </div>
+
+    <div class="pricing-table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Flat No.</th>
+            <th>Floor</th>
+            <th>Price (GST Included)</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>45A</td>
+            <td>Ground</td>
+            <td>₹40,96,000</td>
+            <td style="color:#059669;">Available</td>
+          </tr>
+          <tr>
+            <td>45B</td>
+            <td>First</td>
+            <td>₹39,91,000</td>
+            <td style="color:#059669;">Available</td>
+          </tr>
+          <tr>
+            <td>45C</td>
+            <td>Second</td>
+            <td>₹38,86,000</td>
+            <td style="color:#059669;">Available</td>
+          </tr>
+          <tr>
+            <td>45D</td>
+            <td>Third</td>
+            <td>₹37,81,000</td>
+            <td style="color:#059669;">Available</td>
+          </tr>
+          <tr>
+            <td>46A</td>
+            <td>Ground</td>
+            <td>₹39,38,000</td>
+            <td style="color:#059669;">Available</td>
+          </tr>
+          <tr>
+            <td>46B</td>
+            <td>First</td>
+            <td>₹38,37,000</td>
+            <td style="color:#059669;">Available</td>
+          </tr>
+          <tr>
+            <td>46C</td>
+            <td>Second</td>
+            <td>₹37,36,000</td>
+            <td style="color:#059669;">Available</td>
+          </tr>
+          <tr>
+            <td>46D</td>
+            <td>Third</td>
+            <td>₹36,35,000</td>
+            <td style="color:#059669;">Available</td>
+          </tr>
+          <tr>
+            <td>47A</td>
+            <td>Ground</td>
+            <td>₹39,38,000</td>
+            <td style="color:#059669;">Available</td>
+          </tr>
+          <tr>
+            <td>47B</td>
+            <td>First</td>
+            <td>₹38,37,000</td>
+            <td style="color:#059669;">Available</td>
+          </tr>
+          <tr>
+            <td>47C</td>
+            <td>Second</td>
+            <td>₹37,36,000</td>
+            <td style="color:#059669;">Available</td>
+          </tr>
+          <tr>
+            <td>47D</td>
+            <td>Third</td>
+            <td>₹36,35,000</td>
+            <td style="color:#059669;">Available</td>
+          </tr>
+          <tr>
+            <td>48A</td>
+            <td>Ground</td>
+            <td>₹39,38,000</td>
+            <td style="color:#059669;">Available</td>
+          </tr>
+          <tr>
+            <td>48B</td>
+            <td>First</td>
+            <td>₹38,37,000</td>
+            <td style="color:#059669;">Available</td>
+          </tr>
+          <tr>
+            <td>48C</td>
+            <td>Second</td>
+            <td>₹37,36,000</td>
+            <td style="color:#059669;">Available</td>
+          </tr>
+          <tr>
+            <td>48D</td>
+            <td>Third</td>
+            <td>₹36,35,000</td>
+            <td style="color:#059669;">Available</td>
+          </tr>
+          <tr>
+            <td>49A</td>
+            <td>Ground</td>
+            <td>₹39,38,000</td>
+            <td style="color:#059669;">Available</td>
+          </tr>
+          <tr>
+            <td>49B</td>
+            <td>First</td>
+            <td>₹38,37,000</td>
+            <td style="color:#059669;">Available</td>
+          </tr>
+          <tr>
+            <td>49C</td>
+            <td>Second</td>
+            <td>₹37,36,000</td>
+            <td style="color:#059669;">Available</td>
+          </tr>
+          <tr>
+            <td>49D</td>
+            <td>Third</td>
+            <td>₹36,35,000</td>
+            <td style="color:#059669;">Available</td>
+          </tr>
+          <tr>
+            <td>50A</td>
+            <td>Ground</td>
+            <td>₹39,38,000</td>
+            <td style="color:#059669;">Available</td>
+          </tr>
+          <tr>
+            <td>50B</td>
+            <td>First</td>
+            <td>₹38,37,000</td>
+            <td style="color:#059669;">Available</td>
+          </tr>
+          <tr>
+            <td>50C</td>
+            <td>Second</td>
+            <td>₹37,36,000</td>
+            <td style="color:#059669;">Available</td>
+          </tr>
+          <tr>
+            <td>50D</td>
+            <td>Third</td>
+            <td>₹36,35,000</td>
+            <td style="color:#059669;">Available</td>
+          </tr>
+          <tr>
+            <td>51A</td>
+            <td>Ground</td>
+            <td>₹39,38,000</td>
+            <td style="color:#059669;">Available</td>
+          </tr>
+          <tr>
+            <td>51B</td>
+            <td>First</td>
+            <td>₹38,37,000</td>
+            <td style="color:#059669;">Available</td>
+          </tr>
+          <tr>
+            <td>51C</td>
+            <td>Second</td>
+            <td>₹37,36,000</td>
+            <td style="color:#059669;">Available</td>
+          </tr>
+          <tr>
+            <td>51D</td>
+            <td>Third</td>
+            <td>₹36,35,000</td>
+            <td style="color:#059669;">Available</td>
+          </tr>
+          <tr>
+            <td>52A</td>
+            <td>Ground</td>
+            <td>₹40,96,000</td>
+            <td style="color:#059669;">Available</td>
+          </tr>
+          <tr>
+            <td>52B</td>
+            <td>First</td>
+            <td>₹39,91,000</td>
+            <td style="color:#059669;">Available</td>
+          </tr>
+          <tr>
+            <td>52C</td>
+            <td>Second</td>
+            <td>₹38,86,000</td>
+            <td style="color:#059669;">Available</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="text-align: center; margin-top: 40px;">
+      <button class="btn-primary" onclick="openModal()">Check Custom Availability</button>
+    </div>
+  </section>
+
+  <!-- Embedded Contact Form REDESIGN -->
+  <section id="contact" style="padding: 0;">
+    <div class="cta-form-section">
+      <div class="cta-info">
+        <h2>Plan a visit or secure your unit.</h2>
+
+        <div class="cta-pointer">
+          <span class="pointer-icon">👉</span>
+          <p style="margin: 0; font-weight: 700; color: var(--accent);">Get an instant callback</p>
+        </div>
+
+        <a href="Miracle Home Phase-II.pdf" class="brochure-btn" download>
+          <i>📂</i> Download Project Brochure
+        </a>
+      </div>
+
+      <div class="contact-form" style="padding: 40px;">
+        <form onsubmit="handleForm(event)">
+          <div class="form-group">
+            <label style="color: var(--primary);">Full Name</label>
+            <input type="text" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <label style="color: var(--primary);">Phone Number</label>
+            <input type="tel" placeholder="+91" required>
+          </div>
+          <div class="form-group">
+            <label style="color: var(--primary);">Interested In</label>
+            <select>
+              <option>Book a Site Visit</option>
+              <option>Request Pricing Sheet</option>
+              <option>General Inquiry</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-submit">Send Inquiry Now</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating Action Buttons -->
+  <div class="floating-actions">
+    <a href="tel:917307000301" class="float-btn btn-call" title="Call Us">
+      <i>📞</i>
+    </a>
+    <a href="https://wa.me/917307000301" class="float-btn btn-whatsapp" target="_blank" title="WhatsApp Us">
+      <i>💬</i>
+    </a>
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo-container" style="margin-bottom: 25px;">
+          <img src="Logo_03_page-0001.jpg" alt="Miracle Homes" class="logo-img">
+          <div class="logo-text">
+            <h1 style="color: var(--white);">Miracle Homes</h1>
+            <span>Safedabad, Barabanki</span>
+          </div>
+        </a>
+        <p>A premier project by <strong>Max Infra Ventures</strong>. Crafting luxury living spaces with trust and
+          excellence in the heart of Barabanki.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#amenities">Amenities</a></li>
+          <li><a href="#gallery">Showcase</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul class="footer-links">
+          <li><a href="#" onclick="openModal()">Privacy Policy</a></li>
+          <li><a href="#" onclick="openModal()">Terms of Use</a></li>
+          <li><a href="#" onclick="openModal()">Brochure</a></li>
+          <li><a href="#" onclick="openModal()">RERA Details</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Corporate</h4>
+        <p><strong>Developed By:</strong><br>MAX MIRACLE BUILDCARE LLP</p>
+        <p style="margin-top: 20px;"><strong>Marketed By:</strong><br>MAX INFRA VENTURES PVT. LTD.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Miracle Home Phase II. All Rights Reserved.</p>
+      <p>Designed for Excellence</p>
+    </div>
+  </footer>
+
+  <script>
+    // Header Scroll Effect
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile    // Toggle Nav
+    function toggleNav() {
+      const nav = document.getElementById('nav');
+      nav.classList.toggle('active');
+      document.body.classList.toggle('no-scroll');
+    }
+
+    // Close nav on link click or outside click
+    document.addEventListener('click', (e) => {
+      const nav = document.getElementById('nav');
+      const toggle = document.querySelector('.nav-toggle');
+
+      if (!nav.contains(e.target) && !toggle.contains(e.target) && nav.classList.contains('active')) {
+        nav.classList.remove('active');
+        document.body.classList.remove('no-scroll');
+      }
+    });
+
+    document.querySelectorAll('#nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        const nav = document.getElementById('nav');
+        if (nav.classList.contains('active')) {
+          nav.classList.remove('active');
+          document.body.classList.remove('no-scroll');
+        }
+      });
+    });
+
+    // Spec Accordion
+    function toggleSpec(element) {
+      const isActive = element.classList.contains('active');
+      document.querySelectorAll('.spec-item').forEach(item => item.classList.remove('active'));
+      if (!isActive) {
+        element.classList.add('active');
+      }
+    }
+
+    // Modal Logic
+    const modal = document.getElementById('inquiryModal');
+
+    function openModal() {
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    function handleForm(e) {
+      e.preventDefault();
+      alert("Thank you for your interest! Our team will contact you shortly.");
+      closeModal();
+    }
+
+    // Startup Logic
+    window.addEventListener('load', () => {
+      // Automatic popup disabled as per request
+    });
+
+    // Scroll to section
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(start \"\" \"C:\\\\Users\\\\ASHAR\\\\Desktop\\\\mirtacle\\\\index1.html\")"
+    ]
+  }
+}
