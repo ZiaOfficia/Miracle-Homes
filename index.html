@@ -12,7 +12,10 @@
   <meta name="keywords"
     content="Miracle Home Phase II, Max Miracle, Ayodhya Highway, Lucknow, Gated Community, Luxury Flats" />
   <meta name="author" content="MAX MIRACLE BUILDCARE LLP" />
-  <meta name="theme-color" content="#0f172a" />
+  <meta name="theme-color" content="#064e3b" />
+
+  <!-- Font Awesome for Premium Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -541,20 +544,26 @@
       font-weight: 700;
     }
 
-    /* Bottom Navigation (Mobile First) */
+    /* Premium Bottom Navigation (App-Like & Glassmorphic) */
     .bottom-nav {
       position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: var(--white);
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 450px;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       display: flex;
       justify-content: space-around;
       align-items: center;
-      padding: 12px 0;
-      box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
-      z-index: 2000;
-      border-top: 1px solid rgba(0, 0, 0, 0.05);
+      padding: 10px 15px;
+      border-radius: 30px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+      z-index: 3000;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     .bottom-nav-item {
@@ -562,26 +571,68 @@
       flex-direction: column;
       align-items: center;
       text-decoration: none;
-      color: var(--text-muted);
+      color: #64748b;
       font-size: 10px;
       font-weight: 700;
-      gap: 5px;
-      transition: var(--transition);
+      gap: 4px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
     }
 
     .bottom-nav-item i {
-      font-size: 18px;
+      font-size: 20px;
+      transition: inherit;
     }
 
-    .bottom-nav-item.active,
-    .bottom-nav-item:hover {
+    .bottom-nav-item span {
+      opacity: 0.7;
+      transition: inherit;
+    }
+
+    .nav-center-item {
+      position: relative;
+      top: -20px;
+      width: 65px;
+      height: 65px;
+      background: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 25px rgba(6, 78, 59, 0.3);
+      border: 4px solid var(--white);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .nav-center-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+
+    .nav-center-item:hover {
+      transform: scale(1.1);
+      box-shadow: 0 15px 30px rgba(6, 78, 59, 0.4);
+    }
+
+    .bottom-nav-item.active {
       color: var(--accent);
     }
 
-    /* Floating Action Buttons */
+    .bottom-nav-item.active i {
+      transform: translateY(-5px);
+    }
+
+    .bottom-nav-item.active span {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
+    /* Floating Action Buttons Adjusted for new Nav */
     .floating-actions {
       position: fixed;
-      bottom: 100px;
+      bottom: 110px;
       right: 20px;
       display: flex;
       flex-direction: column;
@@ -1878,26 +1929,26 @@
   </section>
 
   <!-- Bottom Navigation -->
+  <!-- Premium Bottom Navigation -->
   <div class="bottom-nav">
     <a href="#home" class="bottom-nav-item active">
-      <i>🏠</i>
-      Home
+      <i class="fas fa-home"></i>
+      <span>Home</span>
     </a>
     <a href="#gallery" class="bottom-nav-item">
-      <i>🖼️</i>
-      Showcase
+      <i class="fas fa-images"></i>
+      <span>Gallery</span>
+    </a>
+    <a href="#home" class="nav-center-item">
+      <img src="Logo_01_page-0001.jpg" alt="M">
     </a>
     <a href="#connectivity" class="bottom-nav-item">
-      <i>📍</i>
-      Location
-    </a>
-    <a href="#amenities" class="bottom-nav-item">
-      <i>✨</i>
-      Amenities
+      <i class="fas fa-map-marker-alt"></i>
+      <span>Location</span>
     </a>
     <a href="#contact" class="bottom-nav-item">
-      <i>📅</i>
-      Visit
+      <i class="fas fa-calendar-check"></i>
+      <span>Visit</span>
     </a>
   </div>
 
