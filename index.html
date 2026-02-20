@@ -18,23 +18,24 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;600;700;800&family=Playfair+Display:ital,wght@1,400;1,700&display=swap"
     rel="stylesheet" />
 
   <style>
     :root {
-      --primary: #0f172a;
-      --accent: #ca8a04;
-      /* Gold/Amber */
-      --accent-light: #fef3c7;
-      --text-main: #1e293b;
-      --text-muted: #64748b;
-      --bg-light: #f8fafc;
+      --primary: #064e3b;
+      /* Midnight Emerald */
+      --accent: #d4af37;
+      /* Champagne Gold */
+      --accent-dark: #b8860b;
+      --text-main: #1a1a1a;
+      --text-muted: #4b5563;
+      --bg-light: #f3f4f6;
       --white: #ffffff;
-      --glass: rgba(255, 255, 255, 0.05);
-      --glass-border: rgba(255, 255, 255, 0.1);
-      --shadow-premium: 0 20px 50px rgba(0, 0, 0, 0.1);
-      --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      --glass: rgba(255, 255, 255, 0.03);
+      --glass-border: rgba(255, 255, 255, 0.08);
+      --shadow-premium: 0 30px 60px rgba(0, 0, 0, 0.12);
+      --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     * {
@@ -125,9 +126,9 @@
     }
 
     header.scrolled {
-      background: rgba(255, 255, 255, 0.95);
+      background: var(--primary);
       backdrop-filter: blur(20px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     }
 
     header.scrolled .nav-container {
@@ -175,11 +176,11 @@
     }
 
     header.scrolled .logo-text h1 {
-      color: var(--primary);
+      color: var(--white);
     }
 
     header.scrolled .logo-text span {
-      color: var(--text-muted);
+      color: var(--accent);
     }
 
     nav {
@@ -248,21 +249,56 @@
       color: var(--primary);
     }
 
-    /* Hero Section REDESIGN */
     .hero {
       min-height: 100vh;
       position: relative;
       display: flex;
       align-items: center;
-      padding: 120px 8% 80px;
-      background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url('P1119337.JPG.jpeg') center/cover no-repeat fixed;
+      padding: 80px 8%;
+      background: var(--primary);
+      /* Fallback */
       overflow: hidden;
     }
 
+    .hero-slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .hero-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      opacity: 0;
+      transition: opacity 2s ease-in-out;
+    }
+
+    .hero-slide.active {
+      opacity: 1;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(6, 78, 59, 0.7), rgba(6, 78, 59, 0.7));
+      z-index: 2;
+    }
+
     .hero-container {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 60px;
+      display: flex;
+      justify-content: center;
       align-items: center;
       width: 100%;
       max-width: 1400px;
@@ -273,29 +309,57 @@
 
     .hero-content {
       color: var(--white);
-      text-align: right;
+      text-align: center;
       display: flex;
       flex-direction: column;
-      align-items: flex-end;
+      align-items: center;
     }
 
-    .hero h1 {
-      font-size: clamp(45px, 8vw, 90px);
-      line-height: 1;
-      margin-bottom: 10px;
+    /* Hero Section Polished Typography */
+    .hero-content h1 {
+      font-size: clamp(45px, 12vw, 120px);
+      line-height: 0.85;
+      margin-bottom: 25px;
       font-weight: 950;
       letter-spacing: -4px;
-      text-transform: uppercase;
-      animation: fadeInUp 1s ease;
+      text-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      animation: fadeInUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
-    .hero-subtitle {
-      font-size: 24px;
-      font-weight: 600;
+    .hero-content .hero-subtitle {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(24px, 5vw, 36px);
+      font-weight: 400;
       color: var(--accent);
-      margin-bottom: 30px;
-      display: block;
-      animation: fadeInUp 1s ease 0.2s both;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+      opacity: 0.95;
+      animation: fadeInUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s both;
+      text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-location {
+      font-size: clamp(14px, 2vw, 18px);
+      color: rgba(255, 255, 255, 0.7);
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 35px;
+      animation: fadeInUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.5s both;
+    }
+
+    .hero-price-tag {
+      font-size: clamp(16px, 3.5vw, 22px);
+      font-weight: 800;
+      color: var(--white);
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      padding: 12px 35px;
+      border-radius: 50px;
+      letter-spacing: 1px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+      animation: fadeInUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.7s both;
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .brand-attribution {
@@ -306,125 +370,6 @@
       align-items: center;
       gap: 10px;
       animation: fadeInUp 1s ease 0.4s both;
-    }
-
-    /* USP BAR */
-    .usp-bar {
-      display: flex;
-      justify-content: flex-end;
-      flex-wrap: wrap;
-      gap: 25px;
-      margin-top: 50px;
-      padding-top: 40px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      animation: fadeInUp 1s ease 0.6s both;
-    }
-
-    .usp-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--white);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .usp-item i {
-      color: var(--accent);
-      font-size: 18px;
-    }
-
-    /* Hero Form */
-    /* Hero Form Redesign - Solid Premium */
-    .hero-form-box {
-      background: #1e293b;
-      /* Premium Dark Navy */
-      border: 1px solid rgba(202, 138, 4, 0.2);
-      padding: 45px 40px;
-      border-radius: 24px;
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
-      animation: fadeInUp 1s ease 0.6s both;
-      position: relative;
-    }
-
-    .hero-form-box h3 {
-      color: var(--white);
-      font-size: 26px;
-      margin-bottom: 5px;
-      font-weight: 800;
-    }
-
-    .hero-form-box p {
-      color: rgba(255, 255, 255, 0.5);
-      font-size: 14px;
-      margin-bottom: 35px;
-    }
-
-    .hero-form-box .form-group {
-      margin-bottom: 25px;
-      position: relative;
-    }
-
-    .hero-form-box .form-group label {
-      position: absolute;
-      left: 15px;
-      top: 18px;
-      color: rgba(255, 255, 255, 0.4);
-      font-size: 16px;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      pointer-events: none;
-      background: #1e293b;
-      padding: 0 5px;
-    }
-
-    .hero-form-box input,
-    .hero-form-box select {
-      width: 100%;
-      padding: 18px 15px;
-      background: transparent;
-      border: 2px solid rgba(255, 255, 255, 0.1);
-      border-radius: 12px;
-      color: var(--white);
-      font-size: 16px;
-      outline: none;
-      transition: var(--transition);
-    }
-
-    .hero-form-box input:focus,
-    .hero-form-box select:focus {
-      border-color: var(--accent);
-    }
-
-    /* Floating Label Animation */
-    .hero-form-box input:focus+label,
-    .hero-form-box input:not(:placeholder-shown)+label,
-    .hero-form-box select:focus+label,
-    .hero-form-box select:not([value=""])+label {
-      top: -10px;
-      left: 12px;
-      font-size: 12px;
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    .hero-form-box input::placeholder {
-      color: transparent;
-    }
-
-    .hero-form-box select option {
-      background: #1e293b;
-      color: var(--white);
-    }
-
-    .hero-btns {
-      display: flex;
-      gap: 20px;
-      justify-content: flex-end;
-      animation: fadeInUp 1s ease 0.6s both;
-      margin-top: 10px;
     }
 
     .btn-primary {
@@ -596,11 +541,48 @@
       font-weight: 700;
     }
 
+    /* Bottom Navigation (Mobile First) */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: var(--white);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 12px 0;
+      box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+      z-index: 2000;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .bottom-nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 10px;
+      font-weight: 700;
+      gap: 5px;
+      transition: var(--transition);
+    }
+
+    .bottom-nav-item i {
+      font-size: 18px;
+    }
+
+    .bottom-nav-item.active,
+    .bottom-nav-item:hover {
+      color: var(--accent);
+    }
+
     /* Floating Action Buttons */
     .floating-actions {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
+      bottom: 100px;
+      right: 20px;
       display: flex;
       flex-direction: column;
       gap: 15px;
@@ -608,16 +590,16 @@
     }
 
     .float-btn {
-      width: 55px;
-      height: 55px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 24px;
+      font-size: 20px;
       color: var(--white);
       text-decoration: none;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
       transition: var(--transition);
     }
 
@@ -695,31 +677,69 @@
       border-color: var(--accent);
     }
 
-    /* Gallery Section */
+    /* Bento Gallery Section */
     .gallery {
       background: var(--white);
+      padding: 100px 5% !important;
     }
 
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-auto-rows: 280px;
+      grid-auto-flow: dense;
       gap: 20px;
     }
 
     .gallery-item {
       position: relative;
-      border-radius: 20px;
+      border-radius: 25px;
       overflow: hidden;
-      height: 300px;
       cursor: pointer;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(0, 0, 0, 0.03);
+      transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    /* Bento Spans */
+    .item-large {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    .item-tall {
+      grid-row: span 2;
+    }
+
+    .item-wide {
+      grid-column: span 2;
+    }
+
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 300px;
+      }
+
+      .item-large,
+      .item-tall,
+      .item-wide {
+        grid-column: span 1;
+        grid-row: span 1;
+      }
     }
 
     .gallery-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: var(--transition);
+      transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 30px 60px rgba(6, 78, 59, 0.15);
+      z-index: 10;
     }
 
     .gallery-item:hover img {
@@ -729,12 +749,13 @@
     .gallery-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(transparent, rgba(15, 23, 42, 0.8));
+      background: linear-gradient(to top, rgba(6, 78, 59, 0.9), transparent);
       display: flex;
-      align-items: flex-end;
-      padding: 30px;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 40px;
       opacity: 0;
-      transition: var(--transition);
+      transition: all 0.4s ease;
     }
 
     .gallery-item:hover .gallery-overlay {
@@ -742,9 +763,91 @@
     }
 
     .gallery-overlay span {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .gallery-overlay h4 {
       color: var(--white);
+      font-size: 22px;
       font-weight: 700;
-      font-size: 18px;
+    }
+
+    /* Luxury Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(20px);
+      z-index: 3000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .lightbox.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 85vh;
+      animation: modalSlideUp 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .lightbox-content img {
+      max-width: 100%;
+      max-height: 85vh;
+      border-radius: 15px;
+      box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 40px;
+      right: 40px;
+      color: var(--white);
+      font-size: 40px;
+      cursor: pointer;
+      z-index: 10;
+      transition: transform 0.3s ease;
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 60px;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 24px;
+    }
+
+    .lightbox-nav:hover {
+      background: var(--accent);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .nav-prev {
+      left: 40px;
+    }
+
+    .nav-next {
+      right: 40px;
     }
 
     /* Specifications Accordion */
@@ -1125,7 +1228,7 @@
     /* Responsive */
     @media (max-width: 1024px) {
       section {
-        padding: 80px 5%;
+        padding: 50px 5%;
       }
 
       .section-header {
@@ -1143,19 +1246,12 @@
 
       .hero-container {
         display: flex;
-        flex-direction: column-reverse;
-        gap: 40px;
+        justify-content: center;
       }
 
       .hero-content {
         text-align: center;
         align-items: center;
-      }
-
-      .hero-btns,
-      .usp-bar,
-      .brand-attribution {
-        justify-content: center;
       }
 
       .hero h1 {
@@ -1165,11 +1261,7 @@
 
       .hero-subtitle {
         font-size: 18px;
-      }
-
-      .hero p {
-        font-size: 16px;
-        margin: 0 auto 25px;
+        letter-spacing: 2px;
       }
 
       .overview,
@@ -1243,6 +1335,11 @@
         text-align: center;
       }
 
+      body {
+        padding-bottom: 70px;
+        /* Space for bottom nav */
+      }
+
       .top-bar {
         display: none;
       }
@@ -1253,7 +1350,12 @@
       }
 
       header .nav-container {
-        padding: 15px 5%;
+        padding: 12px 5%;
+      }
+
+      nav,
+      .nav-toggle {
+        display: none !important;
       }
 
       .logo-text {
@@ -1369,6 +1471,23 @@
       .gallery-grid {
         grid-template-columns: 1fr;
       }
+
+      .floating-actions {
+        bottom: 90px;
+        right: 15px;
+      }
+
+      .float-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+      }
+    }
+
+    @media (min-width: 1025px) {
+      .bottom-nav {
+        display: none;
+      }
     }
   </style>
 </head>
@@ -1431,6 +1550,10 @@
         <a href="#amenities">Amenities</a>
         <a href="#gallery">Showcase</a>
         <a href="#contact">Contact</a>
+        <a href="Miracle Home Phase-II.pdf" download class="btn-nav"
+          style="background: var(--accent); color: var(--white); margin-right: 10px;">
+          <i>📂</i> Project Brochure
+        </a>
         <button class="btn-nav" onclick="scrollToSection('contact')">Book Visit</button>
       </nav>
     </div>
@@ -1438,115 +1561,159 @@
 
   <!-- Hero Section -->
   <section class="hero" id="home">
+    <div class="hero-slider" id="heroSlider">
+      <!-- Slides will be injected by JS -->
+    </div>
+    <div class="hero-overlay"></div>
     <div class="hero-container">
-      <!-- Left: Form -->
-      <div class="hero-form-box">
-        <h3>Quick Inquiry</h3>
-        <p>Take the first step towards your dream home.</p>
-        <form onsubmit="handleForm(event)">
-          <div class="form-group">
-            <input type="text" id="heroName" placeholder=" " required>
-            <label for="heroName">Full Name</label>
-          </div>
-          <div class="form-group">
-            <input type="tel" id="heroPhone" placeholder=" " required>
-            <label for="heroPhone">Mobile Number</label>
-          </div>
-          <div class="form-group">
-            <select id="heroReq" required onchange="this.setAttribute('value', this.value)">
-              <option value="" disabled selected hidden></option>
-              <option value="site-visit">Book Site Visit</option>
-              <option value="pricing">Get Pricing Details</option>
-              <option value="brochure">Project Brochure</option>
-            </select>
-            <label for="heroReq">Requirement</label>
-          </div>
-          <button type="submit" class="btn-submit"
-            style="background: var(--accent); color: var(--white); margin-top: 10px;">Inquire Now</button>
-        </form>
-      </div>
-
-      <!-- Right: Content -->
       <div class="hero-content">
-        <h1>MIRACLE HOMES</h1>
-        <span class="hero-subtitle">Safedabad, Barabanki</span>
-
-        <p style="font-size: 18px; color: rgba(255, 255, 255, 0.8); margin-bottom: 30px; line-height: 1.6;">
-          Discover a life of elegance and comfort in our premium gated community.<br>
-          Join 50+ happy families already living their dream.
-        </p>
-
-        <div class="hero-btns">
-          <button class="btn-primary" onclick="scrollToSection('overview')">Explore Details</button>
-          <button class="btn-secondary" onclick="scrollToSection('gallery')">View Portfolio</button>
-        </div>
-
-        <div class="hero-brochure-wrapper"
-          style="margin-top: 25px; display: flex; align-items: center; gap: 15px; animation: fadeInUp 1s ease 0.7s both;">
-          <span class="pointer-icon"
-            style="font-size: 28px; animation: pointRight 1s infinite alternate; color: var(--accent);">👉</span>
-          <a href="Miracle Home Phase-II.pdf" class="btn-secondary" download
-            style="padding: 12px 25px; border-color: var(--accent); color: var(--accent); font-size: 15px; backdrop-filter: blur(5px); background: rgba(202, 138, 4, 0.05);">
-            <i>📂</i> Download Project Brochure
-          </a>
-        </div>
-
-        <div class="brand-attribution">
-          A Project by <strong>Max Infra Ventures</strong>
-        </div>
-
-        <div class="usp-bar">
-          <div class="usp-item"><i>🛡️</i> RERA Registered</div>
-          <div class="usp-item"><i>🏛️</i> Zila Panchayat Approved</div>
-          <div class="usp-item"><i>🏦</i> Bank Approved</div>
-          <div class="usp-item"><i>🏠</i> 50+ Families Living</div>
-        </div>
+        <span class="hero-subtitle">Miracle Homes</span>
+        <h1>EXTRAORDINARY<br>LIVING</h1>
+        <div class="hero-location">Safedabad, Barabanki</div>
+        <div class="hero-price-tag">Starting @ ₹36 Lakhs</div>
       </div>
     </div>
   </section>
 
-  <!-- Overview Section -->
-  <section class="overview" id="overview">
-    <div class="overview-image">
-      <img src="P1119307.JPG.jpeg" alt="Miracle Home Entrance">
-    </div>
-    <div class="overview-content">
-      <div class="section-header" style="text-align: left; margin-bottom: 30px;">
-        <span>The Overview</span>
-        <h2>Your Dream Home Awaits</h2>
-      </div>
-      <p>Top-of-the-line amenities and specifications make for a marvelous milieu, adding to your residing pleasure at
-        Miracle Home. Experience the perfect blend of modern architecture and peaceful living.</p>
-
-      <div class="feature-list">
-        <div class="feature-item"><i>🏠</i> Super Area: 1144 SQFT</div>
-        <div class="feature-item"><i>🛡️</i> 24/7 Gated Security</div>
-        <div class="feature-item"><i>🌳</i> Lush Green Park</div>
-        <div class="feature-item"><i>📍</i> Near Ayodhya Highway</div>
-        <div class="feature-item"><i>💡</i> Solar Street Lights</div>
-        <div class="feature-item"><i>🌧️</i> Rainwater Harvesting</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Amenities Section (Simplified Paragraph Form) -->
-  <section id="amenities">
+  <!-- Property Showcase (Trend-Setting Bento Gallery) -->
+  <section id="gallery" class="gallery">
     <div class="section-header">
-      <span>Lifestyle</span>
-      <h2>World-Class Amenities</h2>
+      <span>The Experience</span>
+      <h2>Property Showcase</h2>
+      <p>A cinematic tour through the architectural brilliance of Miracle Homes.</p>
     </div>
-
-    <div class="amenities-content">
-      <p>Luxury living at Miracle Homes is defined by a curated collection of premium amenities designed for your
-        well-being. Enjoy the convenience of a modern Health Club featuring a fully equipped Gym and Aerobics hall.
-        Relax and celebrate in our spacious Multipurpose Party Hall or find tranquility in the dedicated Yoga and
-        Meditation center.</p>
-      <p>Families will appreciate the safe and engaging Children's Play Area, complete with swings and sand pits. Stay
-        active on our wide, tree-lined jogging tracks that weave through lush green landscapes. Your safety is our
-        priority, with 24/7 CCTV monitoring and a state-of-the-art security control room ensuring total peace of mind
-        for every resident.</p>
+    <div class="gallery-grid" id="galleryGrid">
+      <div class="gallery-item item-large" onclick="openLightbox(0)">
+        <img src="P1119337.JPG.jpeg" alt="Project Overview">
+        <div class="gallery-overlay">
+          <span>Iconic Architecture</span>
+          <h4>Majestic Development</h4>
+        </div>
+      </div>
+      <div class="gallery-item item-tall" onclick="openLightbox(1)">
+        <img src="P1119307.JPG.jpeg" alt="Main Entrance">
+        <div class="gallery-overlay">
+          <span>First Impression</span>
+          <h4>Premium Entry</h4>
+        </div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(2)">
+        <img src="P1119308.JPG.jpeg" alt="Security Gate">
+        <div class="gallery-overlay">
+          <span>Safety First</span>
+          <h4>Gated Security</h4>
+        </div>
+      </div>
+      <div class="gallery-item item-wide" onclick="openLightbox(3)">
+        <img src="P1119316.JPG.jpeg" alt="Residential Lanes">
+        <div class="gallery-overlay">
+          <span>Community</span>
+          <h4>Peaceful Streets</h4>
+        </div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(4)">
+        <img src="P1119317.JPG.jpeg" alt="Elevation View">
+        <div class="gallery-overlay">
+          <span>Design</span>
+          <h4>Modern Elevation</h4>
+        </div>
+      </div>
+      <div class="gallery-item item-large" onclick="openLightbox(5)">
+        <img src="P1119320.JPG.jpeg" alt="Interior View">
+        <div class="gallery-overlay">
+          <span>Luxe Interiors</span>
+          <h4>Dream Living Spaces</h4>
+        </div>
+      </div>
+      <div class="gallery-item item-tall" onclick="openLightbox(6)">
+        <img src="P1119322.JPG.jpeg" alt="Bedroom View">
+        <div class="gallery-overlay">
+          <span>Comfort</span>
+          <h4>Cozy Bedrooms</h4>
+        </div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(7)">
+        <img src="P1119323.JPG.jpeg" alt="Balcony View">
+        <div class="gallery-overlay">
+          <span>Outlook</span>
+          <h4>Scenic Balconies</h4>
+        </div>
+      </div>
+      <div class="gallery-item item-wide" onclick="openLightbox(8)">
+        <img src="P1119324.JPG.jpeg" alt="Bathroom Finishes">
+        <div class="gallery-overlay">
+          <span>Quality</span>
+          <h4>Premium Fittings</h4>
+        </div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(9)">
+        <img src="P1119325.JPG.jpeg" alt="Kitchen Layout">
+        <div class="gallery-overlay">
+          <span>Culinary Space</span>
+          <h4>Modern Kitchens</h4>
+        </div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(10)">
+        <img src="P1119326.JPG.jpeg" alt="Dining Area">
+        <div class="gallery-overlay">
+          <span>Hospitality</span>
+          <h4>Spacious Dining</h4>
+        </div>
+      </div>
+      <div class="gallery-item item-large" onclick="openLightbox(11)">
+        <img src="P1119329.JPG.jpeg" alt="Night View">
+        <div class="gallery-overlay">
+          <span>Ambience</span>
+          <h4>Illuminated Beauty</h4>
+        </div>
+      </div>
+      <div class="gallery-item item-tall" onclick="openLightbox(12)">
+        <img src="P1119332.JPG.jpeg" alt="Park View">
+        <div class="gallery-overlay">
+          <span>Greenery</span>
+          <h4>Lush Landscapes</h4>
+        </div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(13)">
+        <img src="P1119333.JPG.jpeg" alt="Jogging Track">
+        <div class="gallery-overlay">
+          <span>Fitness</span>
+          <h4>Healthy Lifestyle</h4>
+        </div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(14)">
+        <img src="P1119334.JPG.jpeg" alt="Kids Play Area">
+        <div class="gallery-overlay">
+          <span>Family</span>
+          <h4>Joyful Childhoods</h4>
+        </div>
+      </div>
+      <div class="gallery-item item-wide" onclick="openLightbox(15)">
+        <img src="P1119335.JPG.jpeg" alt="Clubhouse">
+        <div class="gallery-overlay">
+          <span>Amenities</span>
+          <h4>Community Clubhouse</h4>
+        </div>
+      </div>
+      <div class="gallery-item" onclick="openModal()">
+        <img src="P1119318.JPG.jpeg" alt="Site Visit">
+        <div class="gallery-overlay" style="background: rgba(212, 175, 55, 0.95); opacity: 1;">
+          <span style="color: white;">Curiosity Gap</span>
+          <h4 style="color: white;">See it in Person</h4>
+        </div>
+      </div>
     </div>
   </section>
+
+  <!-- Lightbox Structure -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-close" onclick="closeLightbox()">&times;</div>
+    <div class="lightbox-nav nav-prev" onclick="changeLightbox(-1)">&#10094;</div>
+    <div class="lightbox-nav nav-next" onclick="changeLightbox(1)">&#10095;</div>
+    <div class="lightbox-content">
+      <img id="lightboxImg" src="" alt="Fullscreen View">
+    </div>
+  </div>
 
   <!-- Connectivity & Nearby Places -->
   <section class="connectivity" id="connectivity">
@@ -1580,38 +1747,45 @@
     </div>
   </section>
 
-  <!-- Property Showcase (Gallery) -->
-  <section id="gallery" class="gallery">
+  <!-- Amenities Section (Simplified Paragraph Form) -->
+  <section id="amenities">
     <div class="section-header">
-      <span>Visual Tour</span>
-      <h2>Property Showcase</h2>
-      <p>A glimpse into the architectural excellence and premium interiors of Miracle Home.</p>
+      <span>Lifestyle</span>
+      <h2>World-Class Amenities</h2>
     </div>
-    <div class="gallery-grid">
-      <div class="gallery-item">
-        <img src="P1119308.JPG.jpeg" alt="Gated Entrance">
-        <div class="gallery-overlay"><span>Majestic Entry Gate</span></div>
+
+    <div class="amenities-content">
+      <p>Luxury living at Miracle Homes is defined by a curated collection of premium amenities designed for your
+        well-being. Enjoy the convenience of a modern Health Club featuring a fully equipped Gym and Aerobics hall.
+        Relax and celebrate in our spacious Multipurpose Party Hall or find tranquility in the dedicated Yoga and
+        Meditation center.</p>
+      <p>Families will appreciate the safe and engaging Children's Play Area, complete with swings and sand pits. Stay
+        active on our wide, tree-lined jogging tracks that weave through lush green landscapes. Your safety is our
+        priority, with 24/7 CCTV monitoring and a state-of-the-art security control room ensuring total peace of mind
+        for every resident.</p>
+    </div>
+  </section>
+
+  <!-- Overview Section -->
+  <section class="overview" id="overview">
+    <div class="overview-image">
+      <img src="P1119307.JPG.jpeg" alt="Miracle Home Entrance">
+    </div>
+    <div class="overview-content">
+      <div class="section-header" style="text-align: left; margin-bottom: 30px;">
+        <span>The Overview</span>
+        <h2>Your Dream Home Awaits</h2>
       </div>
-      <div class="gallery-item">
-        <img src="P1119316.JPG.jpeg" alt="Residential Lanes">
-        <div class="gallery-overlay"><span>Serene Residential Lanes</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="P1119320.JPG.jpeg" alt="Premium Living Room">
-        <div class="gallery-overlay"><span>Luxury Living Spaces</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="P1119317.JPG.jpeg" alt="Building Elevation">
-        <div class="gallery-overlay"><span>Modern Architecture</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="P1119318.JPG.jpeg" alt="Exterior Finish">
-        <div class="gallery-overlay"><span>Premium Exterior Finishes</span></div>
-      </div>
-      <div class="gallery-item" onclick="openModal()">
-        <img src="P1119335.JPG.jpeg" alt="Community View">
-        <div class="gallery-overlay" style="background: rgba(202, 138, 4, 0.8); opacity: 0.9;"><span>Inquire for Site
-            Visit</span></div>
+      <p>Top-of-the-line amenities and specifications make for a marvelous milieu, adding to your residing pleasure at
+        Miracle Home. Experience the perfect blend of modern architecture and peaceful living.</p>
+
+      <div class="feature-list">
+        <div class="feature-item"><i>🏠</i> Super Area: 1144 SQFT</div>
+        <div class="feature-item"><i>🛡️</i> 24/7 Gated Security</div>
+        <div class="feature-item"><i>🌳</i> Lush Green Park</div>
+        <div class="feature-item"><i>📍</i> Near Ayodhya Highway</div>
+        <div class="feature-item"><i>💡</i> Solar Street Lights</div>
+        <div class="feature-item"><i>🌧️</i> Rainwater Harvesting</div>
       </div>
     </div>
   </section>
@@ -1703,12 +1877,38 @@
     </div>
   </section>
 
+  <!-- Bottom Navigation -->
+  <div class="bottom-nav">
+    <a href="#home" class="bottom-nav-item active">
+      <i>🏠</i>
+      Home
+    </a>
+    <a href="#gallery" class="bottom-nav-item">
+      <i>🖼️</i>
+      Showcase
+    </a>
+    <a href="#connectivity" class="bottom-nav-item">
+      <i>📍</i>
+      Location
+    </a>
+    <a href="#amenities" class="bottom-nav-item">
+      <i>✨</i>
+      Amenities
+    </a>
+    <a href="#contact" class="bottom-nav-item">
+      <i>📅</i>
+      Visit
+    </a>
+  </div>
+
   <!-- Floating Action Buttons -->
   <div class="floating-actions">
-    <a href="tel:917307000301" class="float-btn btn-call" title="Call Us">
+    <a href="tel:917307000301" class="float-btn btn-call" title="Call Us"
+      style="background: var(--primary); color: white;">
       <i>📞</i>
     </a>
-    <a href="https://wa.me/917307000301" class="float-btn btn-whatsapp" target="_blank" title="WhatsApp Us">
+    <a href="https://wa.me/917307000301" class="float-btn btn-whatsapp" target="_blank" title="WhatsApp Us"
+      style="background: #25D366; color: white;">
       <i>💬</i>
     </a>
   </div>
@@ -1767,7 +1967,7 @@
       }
     });
 
-    // Mobile    // Toggle Nav
+    // Toggle Nav
     function toggleNav() {
       const nav = document.getElementById('nav');
       nav.classList.toggle('active');
@@ -1823,15 +2023,89 @@
       closeModal();
     }
 
-    // Startup Logic
-    window.addEventListener('load', () => {
-      // Automatic popup disabled as per request
-    });
-
     // Scroll to section
     function scrollToSection(id) {
-      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
+
+    // Lightbox Logic
+    let currentImgIndex = 0;
+    const galleryImages = [
+      'P1119337.JPG.jpeg', 'P1119307.JPG.jpeg', 'P1119308.JPG.jpeg', 'P1119316.JPG.jpeg',
+      'P1119317.JPG.jpeg', 'P1119320.JPG.jpeg', 'P1119322.JPG.jpeg', 'P1119323.JPG.jpeg',
+      'P1119324.JPG.jpeg', 'P1119325.JPG.jpeg', 'P1119326.JPG.jpeg', 'P1119329.JPG.jpeg',
+      'P1119332.JPG.jpeg', 'P1119333.JPG.jpeg', 'P1119334.JPG.jpeg', 'P1119335.JPG.jpeg'
+    ];
+
+    function openLightbox(index) {
+      currentImgIndex = index;
+      document.getElementById('lightboxImg').src = galleryImages[index];
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    function changeLightbox(dir) {
+      currentImgIndex = (currentImgIndex + dir + galleryImages.length) % galleryImages.length;
+      document.getElementById('lightboxImg').src = galleryImages[currentImgIndex];
+    }
+
+    // Hero Slider Implementation
+    const heroSlider = document.getElementById('heroSlider');
+    const heroImages = [
+      'P1119337.JPG.jpeg', 'P1119307.JPG.jpeg', 'P1119308.JPG.jpeg', 'P1119316.JPG.jpeg',
+      'P1119317.JPG.jpeg', 'P1119318.JPG.jpeg', 'P1119320.JPG.jpeg', 'P1119322.JPG.jpeg',
+      'P1119323.JPG.jpeg', 'P1119324.JPG.jpeg', 'P1119325.JPG.jpeg', 'P1119326.JPG.jpeg',
+      'P1119329.JPG.jpeg', 'P1119332.JPG.jpeg', 'P1119333.JPG.jpeg', 'P1119334.JPG.jpeg',
+      'P1119335.JPG.jpeg'
+    ];
+
+    heroImages.forEach((img, index) => {
+      const slide = document.createElement('div');
+      slide.className = `hero-slide ${index === 0 ? 'active' : ''}`;
+      slide.style.backgroundImage = `url('${img}')`;
+      heroSlider.appendChild(slide);
+    });
+
+    let currentSlide = 0;
+    setInterval(() => {
+      const slides = document.querySelectorAll('.hero-slide');
+      if (slides.length > 0) {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+      }
+    }, 5000);
+
+    // Bottom Nav Active State
+    window.addEventListener('scroll', () => {
+      let current = "";
+      const sections = ['home', 'gallery', 'connectivity', 'amenities', 'overview', 'contact'];
+
+      sections.forEach(section => {
+        const element = document.getElementById(section);
+        if (element) {
+          const sectionTop = element.offsetTop;
+          if (pageYOffset >= (sectionTop - 300)) {
+            current = section;
+          }
+        }
+      });
+
+      document.querySelectorAll('.bottom-nav-item').forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('href') === `#${current}`) {
+          item.classList.add('active');
+        }
+      });
+    });
   </script>
 </body>
 
