@@ -30,7 +30,8 @@
     }
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--ink);line-height:1.65;overflow-x:hidden;padding-bottom:80px}
+    body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--ink);line-height:1.65;overflow-x:hidden}
+    @media(max-width:900px){body{padding-bottom:80px}}
     h1,h2,h3,h4{font-family:'Cormorant Garamond',serif}
     ::-webkit-scrollbar{width:5px}
     ::-webkit-scrollbar-track{background:var(--cdk)}
@@ -49,14 +50,7 @@
     section{padding:76px 5%}
     @media(max-width:600px){section{padding:56px 5%}}
 
-    /* ========== TOP BAR ========== */
-    .topbar{background:var(--em);padding:9px 5%;font-size:11.5px;font-weight:600;letter-spacing:.4px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;border-bottom:1px solid rgba(212,175,55,.18);color:rgba(255,255,255,.8)}
-    .tb-left{display:flex;align-items:center;gap:6px}
-    .tb-left i{color:var(--gold)}
-    .tb-right{display:flex;gap:10px;flex-wrap:wrap}
-    .tb-chip{display:flex;align-items:center;gap:5px;background:rgba(212,175,55,.1);padding:3px 10px;border-radius:20px;border:1px solid rgba(212,175,55,.22)}
-    .tb-chip i{color:var(--gold);font-size:10px}
-    @media(max-width:600px){.topbar{display:none}}
+
 
     /* ========== HEADER ========== */
     header{position:fixed;top:0;width:100%;z-index:1000;transition:var(--tr)}
@@ -74,13 +68,12 @@
     nav a:hover::after{width:100%}
     .btn-cta{background:linear-gradient(135deg,var(--gold),var(--gdk));color:var(--wh);padding:10px 24px;border-radius:50px;font-weight:700;font-size:13px;border:none;cursor:pointer;text-decoration:none;box-shadow:0 6px 20px rgba(212,175,55,.35);transition:var(--tr)}
     .btn-cta:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(212,175,55,.45)}
-    .ntoggle{display:none;font-size:26px;color:var(--wh);cursor:pointer;z-index:1010}
+    .ntoggle{display:none!important}
+    /* Mobile nav — handled by bottom nav bar only */
     @media(max-width:900px){
       nav{display:none}
-      nav.active{display:flex;flex-direction:column;position:fixed;top:0;left:0;width:80%;max-width:300px;height:100vh;background:var(--em);padding:90px 36px 40px;gap:26px;box-shadow:20px 0 60px rgba(0,0,0,.25);z-index:1005}
-      nav.active a{font-size:18px;color:rgba(255,255,255,.85)}
-      .ntoggle{display:block}
     }
+
 
     /* ========== HERO ========== */
     .hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;background:var(--em);overflow:hidden}
@@ -173,14 +166,34 @@
     @media(max-width:480px){.acards{grid-template-columns:repeat(3,1fr);gap:9px}.acard{padding:16px 8px;border-radius:12px}.ai{font-size:24px;margin-bottom:7px}.an{font-size:11px}}
 
     /* ========== CONNECTIVITY ========== */
-    .conn-sec{background:var(--cream)}
-    .ccards{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px}
-    .cc{background:var(--wh);border:1px solid var(--cdk);border-radius:18px;padding:28px 16px;text-align:center;position:relative;overflow:hidden;transition:var(--tr)}
-    .cc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gdk));opacity:0;transition:opacity .3s}
-    .cc:hover{transform:translateY(-5px);box-shadow:var(--s2)}
-    .cc:hover::before{opacity:1}
-    .cd{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;color:var(--gold);line-height:1;display:block}
-    .cn{font-size:13px;font-weight:600;color:var(--em);margin-top:8px;display:block}
+    .conn-sec{background:var(--em);position:relative;overflow:hidden}
+    .conn-sec::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(212,175,55,.07) 0%,transparent 70%);pointer-events:none}
+    .conn-sec .sec-title{color:var(--wh)}
+    .conn-sec .sec-sub{color:rgba(255,255,255,.58)}
+
+    .conn-layout{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:start}
+
+    /* Landmark cards */
+    .conn-landmarks{display:flex;flex-direction:column;gap:12px}
+    .lm-card{background:rgba(255,255,255,.06);border:1px solid rgba(212,175,55,.15);border-radius:16px;padding:16px 20px;display:flex;align-items:center;gap:16px;transition:var(--tr);cursor:default}
+    .lm-card:hover{background:rgba(212,175,55,.1);border-color:rgba(212,175,55,.4);transform:translateX(6px)}
+    .lm-ico{width:44px;height:44px;flex-shrink:0;border-radius:12px;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.25);display:flex;align-items:center;justify-content:center;font-size:20px}
+    .lm-info{flex:1}
+    .lm-name{font-size:14px;font-weight:600;color:rgba(255,255,255,.88);display:block;line-height:1.2}
+    .lm-cat{font-size:11px;color:rgba(255,255,255,.45);font-weight:500;margin-top:2px;display:block;letter-spacing:.3px}
+    .lm-dist{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--gold);flex-shrink:0;line-height:1}
+
+    /* Map container */
+    .map-wrap{position:relative;border-radius:22px;overflow:hidden;border:2px solid rgba(212,175,55,.25);box-shadow:0 24px 60px rgba(0,0,0,.35)}
+    .map-wrap iframe{width:100%;height:420px;display:block;border:none;filter:grayscale(20%) contrast(1.05)}
+    .map-badge{position:absolute;top:16px;left:16px;background:var(--em);border:1.5px solid var(--gold);border-radius:12px;padding:10px 16px;display:flex;align-items:center;gap:8px;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+    .map-badge i{color:var(--gold);font-size:14px}
+    .map-badge span{font-size:12px;font-weight:700;color:var(--wh);letter-spacing:.5px}
+    .map-btn{position:absolute;bottom:16px;right:16px;background:linear-gradient(135deg,var(--gold),var(--gdk));color:var(--wh);padding:10px 20px;border-radius:50px;font-size:12px;font-weight:700;text-decoration:none;letter-spacing:.5px;box-shadow:0 8px 20px rgba(212,175,55,.4);transition:var(--tr);display:flex;align-items:center;gap:6px}
+    .map-btn:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(212,175,55,.5)}
+
+    @media(max-width:900px){.conn-layout{grid-template-columns:1fr;gap:32px}}
+    @media(max-width:600px){.map-wrap iframe{height:300px}.lm-card{padding:13px 16px}.lm-ico{width:38px;height:38px;font-size:17px}.lm-dist{font-size:20px}}
 
     /* ========== SPECS ========== */
     .specs-sec{background:var(--wh)}
@@ -241,8 +254,11 @@
     .mcls:hover{background:var(--gold)}
     @keyframes fi{from{opacity:0}to{opacity:1}}
 
-    /* ========== BOTTOM NAV ========== */
-    .bnav{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);width:90%;max-width:390px;background:rgba(6,78,59,.95);backdrop-filter:blur(20px);border:1px solid rgba(212,175,55,.22);border-radius:26px;display:flex;justify-content:space-around;align-items:center;padding:9px 6px;z-index:3000;box-shadow:0 12px 40px rgba(6,78,59,.42)}
+    /* ========== BOTTOM NAV (mobile only) ========== */
+    .bnav{display:none}
+    @media(max-width:900px){
+      .bnav{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);width:90%;max-width:390px;background:rgba(6,78,59,.97);backdrop-filter:blur(20px);border:1px solid rgba(212,175,55,.22);border-radius:26px;display:flex;justify-content:space-around;align-items:center;padding:9px 6px;z-index:3000;box-shadow:0 12px 40px rgba(6,78,59,.42)}
+    }
     .bni{display:flex;flex-direction:column;align-items:center;gap:3px;text-decoration:none;color:rgba(255,255,255,.45);font-size:9px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:5px 10px;border-radius:16px;transition:var(--tr)}
     .bni i{font-size:17px;transition:transform .3s}
     .bni.active,.bni:hover{color:var(--gold)}
@@ -251,12 +267,19 @@
     .bnc:hover{transform:scale(1.08) translateY(-2px)}
     .bnc img{width:100%;height:100%;object-fit:contain;border-radius:50%}
 
-    /* ========== FAB ========== */
-    .fabs{position:fixed;bottom:96px;right:16px;display:flex;flex-direction:column;gap:11px;z-index:2000}
-    .fab{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--wh);text-decoration:none;box-shadow:0 8px 20px rgba(0,0,0,.2);transition:var(--tr)}
-    .fab:hover{transform:scale(1.12);box-shadow:0 14px 28px rgba(0,0,0,.3)}
-    .fc2{background:var(--em)}
-    .fw{background:#25D366}
+    /* ========== FLOATING ACTION PILLS ========== */
+    .fab-left,.fab-right{
+      position:fixed;bottom:32px;z-index:2000;
+      width:46px;height:46px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      font-size:20px;color:var(--wh);text-decoration:none;
+      box-shadow:0 6px 20px rgba(0,0,0,.22);
+      transition:var(--tr);
+    }
+    .fab-left{left:20px;background:linear-gradient(135deg,var(--em),var(--em2));border:1.5px solid rgba(212,175,55,.3)}
+    .fab-right{right:20px;background:linear-gradient(135deg,#1db954,#128c3e);border:1.5px solid rgba(255,255,255,.15)}
+    .fab-left:hover,.fab-right:hover{transform:scale(1.12);box-shadow:0 12px 28px rgba(0,0,0,.3)}
+    @media(max-width:900px){.fab-left,.fab-right{bottom:96px}}
 
     /* ========== FOOTER ========== */
     footer{background:var(--ink);color:rgba(255,255,255,.55);padding:60px 5% 30px}
@@ -298,21 +321,11 @@
 
   <!-- HEADER -->
   <header id="header">
-    <div class="topbar">
-      <div class="tb-left"><i class="fas fa-map-marker-alt"></i> Ayodhya Maarg · Safedabad, Barabanki</div>
-      <div class="tb-right">
-        <div class="tb-chip"><i class="fas fa-check-circle"></i> RERA Approved</div>
-        <div class="tb-chip"><i class="fas fa-university"></i> Bank Approved</div>
-        <div class="tb-chip"><i class="fas fa-home"></i> 50+ Families Living</div>
-        <div class="tb-chip"><i class="fas fa-tag"></i> Starting ₹36 Lacs</div>
-      </div>
-    </div>
     <div class="nav-wrap">
       <a href="#" class="logo">
         <img src="Logo_01_page-0001.jpg" alt="Miracle Homes" class="logo-img">
         <div class="logo-txt"><h1>Miracle Homes</h1><small>Safedabad, Barabanki</small></div>
       </a>
-      <div class="ntoggle" onclick="toggleNav()">&#9776;</div>
       <nav id="nav">
         <a href="#home">Home</a>
         <a href="#gallery">Gallery</a>
@@ -438,15 +451,74 @@
     <div class="sec-hd">
       <div class="divider"><div class="divider-gem"></div></div>
       <p class="badge">Location Highlights</p>
-      <h2 class="sec-title">Perfectly Connected</h2>
-      <p class="sec-sub">Everything you need is just minutes away from your doorstep.</p>
+      <h2 class="sec-title" style="color:var(--wh)">Perfectly Connected</h2>
+      <p class="sec-sub" style="color:rgba(255,255,255,.58)">Miracle Home Phase II sits at the heart of everything — schools, highways, hospitals, and universities just minutes away.</p>
     </div>
-    <div class="ccards">
-      <div class="cc"><span class="cd">400m</span><span class="cn">Main Highway</span></div>
-      <div class="cc"><span class="cd">300m</span><span class="cn">Awadh Law College</span></div>
-      <div class="cc"><span class="cd">500m</span><span class="cn">Millennium School</span></div>
-      <div class="cc"><span class="cd">1.5km</span><span class="cn">Hind Medical College</span></div>
-      <div class="cc"><span class="cd">6km</span><span class="cn">BBD University</span></div>
+
+    <div class="conn-layout">
+      <!-- Landmarks -->
+      <div class="conn-landmarks">
+        <div class="lm-card">
+          <div class="lm-ico">🛣️</div>
+          <div class="lm-info">
+            <span class="lm-name">Main Ayodhya Highway</span>
+            <span class="lm-cat">Road Connectivity</span>
+          </div>
+          <span class="lm-dist">400m</span>
+        </div>
+        <div class="lm-card">
+          <div class="lm-ico">⚖️</div>
+          <div class="lm-info">
+            <span class="lm-name">Awadh Law College</span>
+            <span class="lm-cat">Education</span>
+          </div>
+          <span class="lm-dist">300m</span>
+        </div>
+        <div class="lm-card">
+          <div class="lm-ico">🏫</div>
+          <div class="lm-info">
+            <span class="lm-name">Millennium School</span>
+            <span class="lm-cat">K–12 Education</span>
+          </div>
+          <span class="lm-dist">500m</span>
+        </div>
+        <div class="lm-card">
+          <div class="lm-ico">🏥</div>
+          <div class="lm-info">
+            <span class="lm-name">Hind Medical College</span>
+            <span class="lm-cat">Healthcare</span>
+          </div>
+          <span class="lm-dist">1.5km</span>
+        </div>
+        <div class="lm-card">
+          <div class="lm-ico">🎓</div>
+          <div class="lm-info">
+            <span class="lm-name">BBD University</span>
+            <span class="lm-cat">Higher Education</span>
+          </div>
+          <span class="lm-dist">6km</span>
+        </div>
+        <div class="lm-card">
+          <div class="lm-ico">✈️</div>
+          <div class="lm-info">
+            <span class="lm-name">Lucknow Airport</span>
+            <span class="lm-cat">Air Connectivity</span>
+          </div>
+          <span class="lm-dist">~25km</span>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="map-wrap">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.4!2d81.12!3d26.91!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be2c1d0ceafef%3A0x7e33c6f62b5bd4b5!2sSafedabad%2C%20Barabanki%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        <div class="map-badge"><i class="fas fa-map-marker-alt"></i><span>Safedabad, Barabanki</span></div>
+        <a href="https://maps.google.com/?q=Safedabad+Barabanki+Uttar+Pradesh" target="_blank" class="map-btn">
+          <i class="fas fa-directions"></i> Get Directions
+        </a>
+      </div>
     </div>
   </section>
 
@@ -502,11 +574,9 @@
     <a href="#contact"      class="bni"><i class="fas fa-calendar-check"></i><span>Visit</span></a>
   </div>
 
-  <!-- FLOATING BUTTONS -->
-  <div class="fabs">
-    <a href="tel:917307000301" class="fab fc2" title="Call">📞</a>
-    <a href="https://wa.me/917307000301" class="fab fw" target="_blank" title="WhatsApp">💬</a>
-  </div>
+  <!-- FLOATING ACTION BUTTONS -->
+  <a href="tel:917307000301" class="fab-left" title="Call Us">📞</a>
+  <a href="https://wa.me/917307000301" class="fab-right" target="_blank" title="WhatsApp">💬</a>
 
   <!-- FOOTER -->
   <footer>
@@ -531,14 +601,6 @@
       document.getElementById('header').classList.toggle('scrolled', window.scrollY > 60);
     });
 
-    // NAV TOGGLE
-    function toggleNav() { document.getElementById('nav').classList.toggle('active'); }
-    document.addEventListener('click', e => {
-      const n = document.getElementById('nav'), t = document.querySelector('.ntoggle');
-      if (!n.contains(e.target) && !t.contains(e.target) && n.classList.contains('active')) n.classList.remove('active');
-    });
-    document.querySelectorAll('#nav a').forEach(a => a.addEventListener('click', () => document.getElementById('nav').classList.remove('active')));
-
     // SPECS ACCORDION
     function toggleSpec(el) {
       const was = el.classList.contains('active');
@@ -550,7 +612,50 @@
     const modal = document.getElementById('modal');
     function openModal()  { modal.classList.add('active');    document.body.style.overflow = 'hidden'; }
     function closeModal() { modal.classList.remove('active'); document.body.style.overflow = ''; }
-    function handleForm(e) { e.preventDefault(); alert("Thank you! Our team will contact you shortly."); closeModal(); }
+
+    // -------------------------------------------------------
+    // GOOGLE SHEETS INTEGRATION
+    // Paste your Google Apps Script Web App URL below when ready
+    const GOOGLE_SHEET_URL = 'YOUR_GOOGLE_SCRIPT_URL_HERE';
+    // -------------------------------------------------------
+
+    function handleForm(e) {
+      e.preventDefault();
+      const form = e.target;
+      const btn  = form.querySelector('button[type="submit"]');
+      const data = {
+        name:      form.querySelector('input[type="text"]').value,
+        phone:     form.querySelector('input[type="tel"]').value,
+        interest:  form.querySelector('select').value,
+        timestamp: new Date().toLocaleString('en-IN', {timeZone:'Asia/Kolkata'})
+      };
+
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+
+      fetch(GOOGLE_SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      })
+      .then(() => {
+        btn.textContent = '✓ Sent Successfully!';
+        btn.style.background = 'linear-gradient(135deg,#1db954,#128c3e)';
+        setTimeout(() => {
+          form.reset();
+          btn.textContent = 'Send Inquiry Now';
+          btn.style.background = '';
+          btn.disabled = false;
+          closeModal();
+        }, 2000);
+      })
+      .catch(() => {
+        btn.textContent = 'Send Inquiry Now';
+        btn.disabled = false;
+        alert('Something went wrong. Please try again.');
+      });
+    }
 
     // LIGHTBOX
     let cur = 0;
@@ -584,7 +689,7 @@
 
     // SCROLL REVEAL
     const obs = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'} }), {threshold:.1});
-    document.querySelectorAll('.fc,.cc,.acard,.sitem,.gi,.ov-img,.ov-content').forEach(el => {
+    document.querySelectorAll('.fc,.acard,.sitem,.gi,.ov-img,.ov-content,.lm-card,.map-wrap').forEach(el => {
       el.style.opacity='0'; el.style.transform='translateY(22px)';
       el.style.transition='opacity .6s ease, transform .6s ease';
       obs.observe(el);
