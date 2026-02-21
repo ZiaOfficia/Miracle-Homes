@@ -37,6 +37,10 @@
     ::-webkit-scrollbar-track{background:var(--cdk)}
     ::-webkit-scrollbar-thumb{background:var(--em);border-radius:4px}
 
+    /* ========== GLOBAL ICON COLOR ========== */
+    .icon{display:inline-flex;align-items:center;justify-content:center;color:var(--gold);font-size:inherit}
+    .icon i{color:var(--gold)}
+
     /* ========== UTILITIES ========== */
     .divider{display:flex;align-items:center;gap:12px;justify-content:center;margin-bottom:14px}
     .divider::before,.divider::after{content:'';flex:1;max-width:55px;height:1px}
@@ -150,7 +154,8 @@
     .feats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     .fc{background:var(--cream);border:1px solid var(--cdk);border-radius:14px;padding:14px;display:flex;align-items:center;gap:12px;transition:var(--tr)}
     .fc:hover{border-color:var(--gold);background:var(--wh);box-shadow:var(--s1)}
-    .fi{width:38px;height:38px;flex-shrink:0;background:var(--em);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px}
+    .fi{width:38px;height:38px;flex-shrink:0;background:var(--em);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px;color:var(--gold)}
+    .fi i{color:var(--gold);font-size:16px}
     .fc span{font-size:13px;font-weight:600;color:var(--em);line-height:1.3}
     @media(max-width:780px){.ovg{grid-template-columns:1fr;gap:32px}.ov-content .sec-title,.ov-content .badge{text-align:center}}
 
@@ -161,7 +166,8 @@
     .acards{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
     .acard{background:rgba(255,255,255,.05);border:1px solid rgba(212,175,55,.18);border-radius:18px;padding:26px 14px;text-align:center;transition:var(--tr)}
     .acard:hover{background:rgba(212,175,55,.1);border-color:var(--gold);transform:translateY(-4px)}
-    .ai{font-size:30px;margin-bottom:11px;display:block}
+    .ai{font-size:28px;margin-bottom:11px;display:block;color:var(--gold)}
+    .ai i{color:var(--gold)}
     .an{font-size:13px;font-weight:600;color:rgba(255,255,255,.85);line-height:1.3}
     @media(max-width:480px){.acards{grid-template-columns:repeat(3,1fr);gap:9px}.acard{padding:16px 8px;border-radius:12px}.ai{font-size:24px;margin-bottom:7px}.an{font-size:11px}}
 
@@ -177,7 +183,8 @@
     .conn-landmarks{display:flex;flex-direction:column;gap:12px}
     .lm-card{background:rgba(255,255,255,.06);border:1px solid rgba(212,175,55,.15);border-radius:16px;padding:16px 20px;display:flex;align-items:center;gap:16px;transition:var(--tr);cursor:default}
     .lm-card:hover{background:rgba(212,175,55,.1);border-color:rgba(212,175,55,.4);transform:translateX(6px)}
-    .lm-ico{width:44px;height:44px;flex-shrink:0;border-radius:12px;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.25);display:flex;align-items:center;justify-content:center;font-size:20px}
+    .lm-ico{width:44px;height:44px;flex-shrink:0;border-radius:12px;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.25);display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--gold)}
+    .lm-ico i{color:var(--gold);font-size:18px}
     .lm-info{flex:1}
     .lm-name{font-size:14px;font-weight:600;color:rgba(255,255,255,.88);display:block;line-height:1.2}
     .lm-cat{font-size:11px;color:rgba(255,255,255,.45);font-weight:500;margin-top:2px;display:block;letter-spacing:.3px}
@@ -215,7 +222,8 @@
     .cdesc{font-size:15px;color:rgba(255,255,255,.62);margin:16px 0 34px;line-height:1.75}
     .cdetails{display:flex;flex-direction:column;gap:18px}
     .crow{display:flex;align-items:center;gap:14px}
-    .cico{width:42px;height:42px;flex-shrink:0;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.28);border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:18px}
+    .cico{width:42px;height:42px;flex-shrink:0;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.28);border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--gold)}
+    .cico i{color:var(--gold);font-size:16px}
     .ctxt h5{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:2px}
     .ctxt p{font-size:14px;font-weight:600;color:rgba(255,255,255,.85)}
     .brlink{display:inline-flex;align-items:center;gap:10px;margin-top:26px;padding:12px 26px;border:1.5px solid rgba(212,175,55,.38);border-radius:50px;color:rgba(255,255,255,.78);font-size:13px;font-weight:600;text-decoration:none;transition:var(--tr)}
@@ -279,6 +287,8 @@
     .fab-left{left:20px;background:linear-gradient(135deg,var(--em),var(--em2));border:1.5px solid rgba(212,175,55,.3)}
     .fab-right{right:20px;background:linear-gradient(135deg,#1db954,#128c3e);border:1.5px solid rgba(255,255,255,.15)}
     .fab-left:hover,.fab-right:hover{transform:scale(1.12);box-shadow:0 12px 28px rgba(0,0,0,.3)}
+    .fab-left i{color:var(--gold);font-size:20px}
+    .fab-right i{color:var(--wh);font-size:22px}
     @media(max-width:900px){.fab-left,.fab-right{bottom:96px}}
 
     /* ========== FOOTER ========== */
@@ -405,8 +415,8 @@
         <h2 class="sec-title" style="color:var(--wh)">Come Visit or Book Your Home Today</h2>
         <p class="cdesc">Our team is here to help you at every step — from visiting the site to getting your home. Just give us a call or fill the form. We will guide you through everything.</p>
         <div class="cdetails">
-          <div class="crow"><div class="cico">📞</div><div class="ctxt"><h5>Call Us</h5><p>+91 73070 00301</p></div></div>
-          <div class="crow"><div class="cico">📍</div><div class="ctxt"><h5>Where We Are</h5><p>Safedabad, Barabanki — near Ayodhya Highway</p></div></div>
+          <div class="crow"><div class="cico"><i class="fas fa-phone"></i></div><div class="ctxt"><h5>Call Us</h5><p>+91 73070 00301</p></div></div>
+          <div class="crow"><div class="cico"><i class="fas fa-map-marker-alt"></i></div><div class="ctxt"><h5>Where We Are</h5><p>Safedabad, Barabanki — near Ayodhya Highway</p></div></div>
         </div>
         <a href="Miracle Home Phase-II.pdf" download class="brlink"><i class="fas fa-file-pdf"></i> Download Free Brochure</a>
       </div>
@@ -434,12 +444,12 @@
         <h2 class="sec-title">A Home You Can Be Proud Of</h2>
         <p class="ov-desc">Miracle Home Phase II is a safe, well-built housing society near Ayodhya Highway in Barabanki. It has everything your family needs — wide roads, parks, security, and good quality construction. Over 80 families already live here happily.</p>
         <div class="feats">
-          <div class="fc"><div class="fi">🏠</div><span>1144 Sq. Ft. — 3 BHK</span></div>
-          <div class="fc"><div class="fi">🛡️</div><span>Security Guard 24 Hours</span></div>
-          <div class="fc"><div class="fi">🌳</div><span>Garden & Open Space</span></div>
-          <div class="fc"><div class="fi">📍</div><span>Near Ayodhya Highway</span></div>
-          <div class="fc"><div class="fi">💡</div><span>Solar Street Lights</span></div>
-          <div class="fc"><div class="fi">🌧️</div><span>Rainwater Saving System</span></div>
+          <div class="fc"><div class="fi"><i class="fas fa-home"></i></div><span>1144 Sq. Ft. — 3 BHK</span></div>
+          <div class="fc"><div class="fi"><i class="fas fa-shield-alt"></i></div><span>Security Guard 24 Hours</span></div>
+          <div class="fc"><div class="fi"><i class="fas fa-tree"></i></div><span>Garden & Open Space</span></div>
+          <div class="fc"><div class="fi"><i class="fas fa-map-marker-alt"></i></div><span>Near Ayodhya Highway</span></div>
+          <div class="fc"><div class="fi"><i class="fas fa-sun"></i></div><span>Solar Street Lights</span></div>
+          <div class="fc"><div class="fi"><i class="fas fa-tint"></i></div><span>Rainwater Saving System</span></div>
         </div>
       </div>
     </div>
@@ -454,15 +464,15 @@
       <p class="sec-sub" style="color:rgba(255,255,255,.56)">All these facilities are already built inside the society — no extra cost.</p>
     </div>
     <div class="acards">
-      <div class="acard"><span class="ai">🏋️</span><p class="an">Sewage Treatment Plant</p></div>
-      <div class="acard"><span class="ai">🎉</span><p class="an">Party Hall for Functions</p></div>
-      <div class="acard"><span class="ai">🛝</span><p class="an">Kids Play Area</p></div>
-      <div class="acard"><span class="ai">🏃</span><p class="an">Walking & Jogging Track</p></div>
-      <div class="acard"><span class="ai">📹</span><p class="an">CCTV Cameras</p></div>
-      <div class="acard"><span class="ai">🌿</span><p class="an">Garden & Green Area</p></div>
-      <div class="acard"><span class="ai">🚗</span><p class="an">Parking for Every Home</p></div>
-      <div class="acard"><span class="ai">💧</span><p class="an">Water Saving System</p></div>
-      <div class="acard"><span class="ai">☀️</span><p class="an">Solar Street Lights</p></div>
+      <div class="acard"><span class="ai"><i class="fas fa-water"></i></span><p class="an">Sewage Treatment Plant</p></div>
+      <div class="acard"><span class="ai"><i class="fas fa-glass-cheers"></i></span><p class="an">Party Hall for Functions</p></div>
+      <div class="acard"><span class="ai"><i class="fas fa-child"></i></span><p class="an">Kids Play Area</p></div>
+      <div class="acard"><span class="ai"><i class="fas fa-running"></i></span><p class="an">Walking & Jogging Track</p></div>
+      <div class="acard"><span class="ai"><i class="fas fa-video"></i></span><p class="an">CCTV Cameras</p></div>
+      <div class="acard"><span class="ai"><i class="fas fa-leaf"></i></span><p class="an">Garden & Green Area</p></div>
+      <div class="acard"><span class="ai"><i class="fas fa-car"></i></span><p class="an">Parking for Every Home</p></div>
+      <div class="acard"><span class="ai"><i class="fas fa-tint"></i></span><p class="an">Water Saving System</p></div>
+      <div class="acard"><span class="ai"><i class="fas fa-solar-panel"></i></span><p class="an">Solar Street Lights</p></div>
     </div>
   </section>
 
@@ -479,51 +489,33 @@
       <!-- Landmarks -->
       <div class="conn-landmarks">
         <div class="lm-card">
-          <div class="lm-ico">🛣️</div>
-          <div class="lm-info">
-            <span class="lm-name">Main Ayodhya Highway</span>
-            <span class="lm-cat">Road Connectivity</span>
-          </div>
+          <div class="lm-ico"><i class="fas fa-road"></i></div>
+          <div class="lm-info"><span class="lm-name">Main Ayodhya Highway</span><span class="lm-cat">Road Connectivity</span></div>
           <span class="lm-dist">700m</span>
         </div>
         <div class="lm-card">
-          <div class="lm-ico">⚖️</div>
-          <div class="lm-info">
-            <span class="lm-name">Awadh Law College</span>
-            <span class="lm-cat">Education</span>
-          </div>
+          <div class="lm-ico"><i class="fas fa-balance-scale"></i></div>
+          <div class="lm-info"><span class="lm-name">Awadh Law College</span><span class="lm-cat">Education</span></div>
           <span class="lm-dist">700m</span>
         </div>
         <div class="lm-card">
-          <div class="lm-ico">🏫</div>
-          <div class="lm-info">
-            <span class="lm-name">Millennium School</span>
-            <span class="lm-cat">K–12 Education</span>
-          </div>
+          <div class="lm-ico"><i class="fas fa-school"></i></div>
+          <div class="lm-info"><span class="lm-name">Millennium School</span><span class="lm-cat">K–12 Education</span></div>
           <span class="lm-dist">10 Minute</span>
         </div>
         <div class="lm-card">
-          <div class="lm-ico">🏥</div>
-          <div class="lm-info">
-            <span class="lm-name">Hind Medical College</span>
-            <span class="lm-cat">Healthcare</span>
-          </div>
+          <div class="lm-ico"><i class="fas fa-hospital"></i></div>
+          <div class="lm-info"><span class="lm-name">Hind Medical College</span><span class="lm-cat">Healthcare</span></div>
           <span class="lm-dist">10 Minute</span>
         </div>
         <div class="lm-card">
-          <div class="lm-ico">🎓</div>
-          <div class="lm-info">
-            <span class="lm-name">BBD University</span>
-            <span class="lm-cat">Higher Education</span>
-          </div>
+          <div class="lm-ico"><i class="fas fa-university"></i></div>
+          <div class="lm-info"><span class="lm-name">BBD University</span><span class="lm-cat">Higher Education</span></div>
           <span class="lm-dist">15 Minute</span>
         </div>
         <div class="lm-card">
-          <div class="lm-ico">✈️</div>
-          <div class="lm-info">
-            <span class="lm-name">Lucknow Airport</span>
-            <span class="lm-cat">Air Connectivity</span>
-          </div>
+          <div class="lm-ico"><i class="fas fa-plane"></i></div>
+          <div class="lm-info"><span class="lm-name">Lucknow Airport</span><span class="lm-cat">Air Connectivity</span></div>
           <span class="lm-dist">30 Minute</span>
         </div>
       </div>
@@ -569,8 +561,8 @@
   </div>
 
   <!-- FLOATING ACTION BUTTONS -->
-  <a href="tel:917307000301" class="fab-left" title="Call Us">📞</a>
-  <a href="https://wa.me/917307000301" class="fab-right" target="_blank" title="WhatsApp">💬</a>
+  <a href="tel:917307000301" class="fab-left" title="Call Us"><i class="fas fa-phone"></i></a>
+  <a href="https://wa.me/917307000301" class="fab-right" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
 
   <!-- FOOTER -->
   <footer>
