@@ -13,7 +13,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet" />
   <style>
-    /* ========== VARIABLES ========== */
     :root {
       --em:   #064e3b;
       --em2:  #085c46;
@@ -39,11 +38,9 @@
     ::-webkit-scrollbar-track{background:var(--cdk)}
     ::-webkit-scrollbar-thumb{background:var(--em);border-radius:4px}
 
-    /* ========== GLOBAL ICON COLOR ========== */
     .icon{display:inline-flex;align-items:center;justify-content:center;color:var(--gold);font-size:inherit}
     .icon i{color:var(--gold)}
 
-    /* ========== UTILITIES ========== */
     .divider{display:flex;align-items:center;gap:12px;justify-content:center;margin-bottom:14px}
     .divider::before,.divider::after{content:'';flex:1;max-width:55px;height:1px}
     .divider::before{background:linear-gradient(to right,transparent,var(--gold))}
@@ -56,9 +53,6 @@
     section{padding:76px 5%}
     @media(max-width:600px){section{padding:56px 5%}}
 
-
-
-    /* ========== HEADER ========== */
     header{position:fixed;top:0;width:100%;z-index:1000;transition:var(--tr)}
     .nav-wrap{padding:18px 5%;display:flex;justify-content:space-between;align-items:center;transition:var(--tr)}
     header.scrolled{background:var(--em);box-shadow:0 8px 32px rgba(6,78,59,.35)}
@@ -75,13 +69,10 @@
     .btn-cta{background:linear-gradient(135deg,var(--gold),var(--gdk));color:var(--wh);padding:10px 24px;border-radius:50px;font-weight:700;font-size:13px;border:none;cursor:pointer;text-decoration:none;box-shadow:0 6px 20px rgba(212,175,55,.35);transition:var(--tr)}
     .btn-cta:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(212,175,55,.45)}
     .ntoggle{display:none!important}
-    /* Mobile nav — handled by bottom nav bar only */
     @media(max-width:900px){
       nav{display:none}
     }
 
-
-    /* ========== HERO ========== */
     .hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;background:var(--em);overflow:hidden}
     .hslider{position:absolute;inset:0;z-index:1}
     .hslide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 2.5s ease-in-out}
@@ -108,7 +99,6 @@
     .btn-ghost{padding:12px 30px;background:transparent;color:var(--wh);border:1.5px solid rgba(255,255,255,.4);border-radius:50px;font-weight:600;font-size:13px;letter-spacing:.8px;text-transform:uppercase;cursor:pointer;transition:var(--tr);text-decoration:none;display:inline-block;backdrop-filter:blur(6px)}
     .btn-ghost:hover{border-color:var(--gold);color:var(--gold);background:rgba(212,175,55,.08)}
 
-    /* Stats bar */
     .hstats{position:absolute;bottom:0;left:0;right:0;z-index:4;background:linear-gradient(90deg,rgba(6,78,59,.93),rgba(4,50,38,.96));backdrop-filter:blur(12px);border-top:1px solid rgba(212,175,55,.2);display:grid;grid-template-columns:repeat(4,1fr);animation:fu 1s ease 1s both}
     .stat{padding:16px 8px;text-align:center;border-right:1px solid rgba(255,255,255,.08)}
     .stat:last-child{border-right:none}
@@ -116,7 +106,6 @@
     .sl{font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.52);display:block;margin-top:4px}
     @media(max-width:500px){.hstats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:none}.stat:nth-child(3),.stat:nth-child(4){border-top:1px solid rgba(255,255,255,.08)}.stat:nth-child(4){border-right:none}}
 
-    /* Scroll hint */
     .hscroll{position:absolute;bottom:84px;left:50%;transform:translateX(-50%);z-index:4;display:flex;flex-direction:column;align-items:center;gap:6px}
     .smouse{width:20px;height:32px;border:1.5px solid rgba(212,175,55,.4);border-radius:10px;display:flex;justify-content:center;padding-top:5px}
     .smouse::before{content:'';width:3px;height:6px;background:var(--gold);border-radius:2px;animation:sd 1.8s ease infinite}
@@ -125,7 +114,6 @@
     @keyframes fu{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
     @media(max-width:500px){.hscroll{display:none}}
 
-    /* ========== GALLERY ========== */
     .gallery-sec{background:var(--cream)}
     .gg{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:250px;grid-auto-flow:dense;gap:12px}
     .g-lg{grid-column:span 2;grid-row:span 2}
@@ -142,7 +130,6 @@
     @media(max-width:680px){.gg{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px}.g-lg,.g-tl,.g-wd{grid-column:span 1;grid-row:span 1}.g-lg{grid-column:span 2;grid-row:span 2}}
     @media(max-width:400px){.gg{grid-auto-rows:140px}}
 
-    /* ========== OVERVIEW ========== */
     .overview-sec{background:var(--wh)}
     .ovg{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
     .ov-img{position:relative;border-radius:22px;overflow:hidden;box-shadow:var(--s3)}
@@ -161,7 +148,6 @@
     .fc span{font-size:13px;font-weight:600;color:var(--em);line-height:1.3}
     @media(max-width:780px){.ovg{grid-template-columns:1fr;gap:32px}.ov-content .sec-title,.ov-content .badge{text-align:center}}
 
-    /* ========== AMENITIES ========== */
     .amen-sec{background:var(--em)}
     .amen-sec .sec-title{color:var(--wh)}
     .amen-sec .sec-sub{color:rgba(255,255,255,.58)}
@@ -173,7 +159,6 @@
     .an{font-size:13px;font-weight:600;color:rgba(255,255,255,.85);line-height:1.3}
     @media(max-width:480px){.acards{grid-template-columns:repeat(3,1fr);gap:9px}.acard{padding:16px 8px;border-radius:12px}.ai{font-size:24px;margin-bottom:7px}.an{font-size:11px}}
 
-    /* ========== CONNECTIVITY ========== */
     .conn-sec{background:var(--em);position:relative;overflow:hidden}
     .conn-sec::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(212,175,55,.07) 0%,transparent 70%);pointer-events:none}
     .conn-sec .sec-title{color:var(--wh)}
@@ -181,7 +166,6 @@
 
     .conn-layout{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:start}
 
-    /* Landmark cards */
     .conn-landmarks{display:flex;flex-direction:column;gap:12px}
     .lm-card{background:rgba(255,255,255,.06);border:1px solid rgba(212,175,55,.15);border-radius:16px;padding:16px 20px;display:flex;align-items:center;gap:16px;transition:var(--tr);cursor:default}
     .lm-card:hover{background:rgba(212,175,55,.1);border-color:rgba(212,175,55,.4);transform:translateX(6px)}
@@ -192,7 +176,6 @@
     .lm-cat{font-size:11px;color:rgba(255,255,255,.45);font-weight:500;margin-top:2px;display:block;letter-spacing:.3px}
     .lm-dist{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--gold);flex-shrink:0;line-height:1}
 
-    /* Map container */
     .map-wrap{position:relative;border-radius:22px;overflow:hidden;border:2px solid rgba(212,175,55,.25);box-shadow:0 24px 60px rgba(0,0,0,.35)}
     .map-wrap iframe{width:100%;height:420px;display:block;border:none;filter:grayscale(20%) contrast(1.05)}
     .map-badge{position:absolute;top:16px;left:16px;background:var(--em);border:1.5px solid var(--gold);border-radius:12px;padding:10px 16px;display:flex;align-items:center;gap:8px;box-shadow:0 8px 24px rgba(0,0,0,.3)}
@@ -204,7 +187,6 @@
     @media(max-width:900px){.conn-layout{grid-template-columns:1fr;gap:32px}}
     @media(max-width:600px){.map-wrap iframe{height:300px}.lm-card{padding:13px 16px}.lm-ico{width:38px;height:38px;font-size:17px}.lm-dist{font-size:20px}}
 
-    /* ========== SPECS ========== */
     .specs-sec{background:var(--wh)}
     .slist{max-width:760px;margin:0 auto}
     .sitem{border-bottom:1px solid var(--cdk)}
@@ -216,7 +198,6 @@
     .sbody{max-height:0;overflow:hidden;transition:max-height .45s ease,padding .3s;font-size:14.5px;color:var(--mute);line-height:1.75}
     .sitem.active .sbody{max-height:200px;padding-bottom:20px}
 
-    /* ========== CONTACT ========== */
     .contact-sec{background:var(--em)}
     .cwrap{display:grid;grid-template-columns:1fr 1.1fr;gap:52px;align-items:center}
     .cinfo .sec-title{color:var(--wh);text-align:left}
@@ -241,7 +222,6 @@
     @media(max-width:780px){.cwrap{grid-template-columns:1fr;gap:34px}.cinfo .sec-title,.cinfo .badge{text-align:center}.cdesc{text-align:center}.cdetails{align-items:center}.brlink{margin:26px auto 0;display:flex;width:fit-content}}
     @media(max-width:440px){.cform{padding:26px 18px}}
 
-    /* ========== LIGHTBOX ========== */
     .lb{position:fixed;inset:0;background:rgba(0,0,0,.95);backdrop-filter:blur(18px);z-index:5000;display:none;align-items:center;justify-content:center}
     .lb.active{display:flex}
     .lb img{max-width:92%;max-height:88vh;border-radius:12px;box-shadow:0 50px 100px rgba(0,0,0,.6)}
@@ -252,7 +232,6 @@
     .lbp{left:18px}
     .lbnx{right:18px}
 
-    /* ========== MODAL ========== */
     .modal{position:fixed;inset:0;background:rgba(4,30,20,.87);backdrop-filter:blur(12px);z-index:4000;display:none;align-items:center;justify-content:center;padding:24px}
     .modal.active{display:flex;animation:fi .3s ease}
     .mbox{background:var(--wh);border-radius:26px;width:100%;max-width:460px;overflow:hidden;position:relative;box-shadow:0 40px 100px rgba(0,0,0,.5);animation:fu .4s ease}
@@ -264,7 +243,6 @@
     .mcls:hover{background:var(--gold)}
     @keyframes fi{from{opacity:0}to{opacity:1}}
 
-    /* ========== BOTTOM NAV (mobile only) ========== */
     .bnav{display:none}
     @media(max-width:900px){
       .bnav{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);width:90%;max-width:390px;background:rgba(6,78,59,.97);backdrop-filter:blur(20px);border:1px solid rgba(212,175,55,.22);border-radius:26px;display:flex;justify-content:space-around;align-items:center;padding:9px 6px;z-index:3000;box-shadow:0 12px 40px rgba(6,78,59,.42)}
@@ -277,7 +255,6 @@
     .bnc:hover{transform:scale(1.08) translateY(-2px)}
     .bnc img{width:100%;height:100%;object-fit:contain;border-radius:50%}
 
-    /* ========== FLOATING ACTION PILLS ========== */
     .fab-left,.fab-right{
       position:fixed;bottom:32px;z-index:2000;
       width:46px;height:46px;border-radius:50%;
@@ -293,7 +270,6 @@
     .fab-right i{color:var(--wh);font-size:22px}
     @media(max-width:900px){.fab-left,.fab-right{bottom:96px}}
 
-    /* ========== FOOTER ========== */
     footer{background:var(--ink);color:rgba(255,255,255,.55);padding:60px 5% 30px}
     .fg-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.4fr;gap:44px;margin-bottom:44px}
     .fb p{font-size:14px;line-height:1.7;margin-top:14px;color:rgba(255,255,255,.4)}
@@ -312,7 +288,6 @@
 </head>
 <body>
 
-  <!-- MODAL -->
   <div class="modal" id="modal">
     <div class="mbox">
       <div class="mcls" onclick="closeModal()">&times;</div>
@@ -331,7 +306,6 @@
     </div>
   </div>
 
-  <!-- HEADER -->
   <header id="header">
     <div class="nav-wrap">
       <a href="#" class="logo">
@@ -349,7 +323,6 @@
     </div>
   </header>
 
-  <!-- HERO -->
   <section class="hero" id="home">
     <div class="hslider" id="heroSlider"></div>
     <div class="hovr"></div>
@@ -373,7 +346,6 @@
     </div>
   </section>
 
-  <!-- GALLERY -->
   <section class="gallery-sec" id="gallery">
     <div class="sec-hd">
       <div class="divider"><div class="divider-gem"></div></div>
@@ -400,7 +372,6 @@
     </div>
   </section>
 
-  <!-- LIGHTBOX -->
   <div class="lb" id="lightbox">
     <div class="lbx" onclick="closeLightbox()">&times;</div>
     <div class="lbn lbp" onclick="changeLightbox(-1)">&#10094;</div>
@@ -408,7 +379,6 @@
     <img id="lbImg" src="" alt="">
   </div>
 
-  <!-- CONTACT -->
   <section class="contact-sec" id="contact">
     <div class="cwrap">
       <div class="cinfo">
@@ -433,7 +403,6 @@
     </div>
   </section>
 
-  <!-- OVERVIEW -->
   <section class="overview-sec" id="overview">
     <div class="ovg">
       <div class="ov-img">
@@ -455,7 +424,6 @@
     </div>
   </section>
 
-  <!-- AMENITIES -->
   <section class="amen-sec" id="amenities">
     <div class="sec-hd">
       <div class="divider"><div class="divider-gem"></div></div>
@@ -476,7 +444,6 @@
     </div>
   </section>
 
-  <!-- CONNECTIVITY -->
   <section class="conn-sec" id="connectivity">
     <div class="sec-hd">
       <div class="divider"><div class="divider-gem"></div></div>
@@ -486,7 +453,6 @@
     </div>
 
     <div class="conn-layout">
-      <!-- Landmarks -->
       <div class="conn-landmarks">
         <div class="lm-card">
           <div class="lm-ico"><i class="fas fa-road"></i></div>
@@ -520,7 +486,6 @@
         </div>
       </div>
 
-      <!-- Map -->
       <div class="map-wrap">
         <iframe
           src="https://maps.google.com/maps?q=26.8929958,81.1551514&z=17&output=embed"
@@ -534,7 +499,6 @@
     </div>
   </section>
 
-  <!-- SPECS -->
   <section class="specs-sec" id="specs">
     <div class="sec-hd">
       <div class="divider"><div class="divider-gem"></div></div>
@@ -551,7 +515,6 @@
     </div>
   </section>
 
-  <!-- BOTTOM NAV -->
   <div class="bnav">
     <a href="#home"         class="bni active"><i class="fas fa-home"></i><span>Home</span></a>
     <a href="#gallery"      class="bni"><i class="fas fa-images"></i><span>Gallery</span></a>
@@ -560,11 +523,9 @@
     <a href="#contact"      class="bni"><i class="fas fa-calendar-check"></i><span>Visit</span></a>
   </div>
 
-  <!-- FLOATING ACTION BUTTONS -->
   <a href="tel:918318592458" class="fab-left" title="Call Us"><i class="fas fa-phone"></i></a>
   <a href="https://wa.me/918318592458" class="fab-right" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
 
-  <!-- FOOTER -->
   <footer>
     <div class="fg-grid">
       <div class="fb">
@@ -582,27 +543,21 @@
   </footer>
 
   <script>
-    // HEADER SCROLL
     window.addEventListener('scroll', () => {
       document.getElementById('header').classList.toggle('scrolled', window.scrollY > 60);
     });
 
-    // SPECS ACCORDION
     function toggleSpec(el) {
       const was = el.classList.contains('active');
       document.querySelectorAll('.sitem').forEach(i => i.classList.remove('active'));
       if (!was) el.classList.add('active');
     }
 
-    // MODAL
     const modal = document.getElementById('modal');
     function openModal()  { modal.classList.add('active');    document.body.style.overflow = 'hidden'; }
     function closeModal() { modal.classList.remove('active'); document.body.style.overflow = ''; }
 
-    // -------------------------------------------------------
-    // GOOGLE SHEETS INTEGRATION
     const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbzCGRkkNRzUXuw8geD_worHh4QsuYpHJEVemq490RKWjT0XiT-0W1o7e28qZbKpBaZD3g/exec';
-    // -------------------------------------------------------
 
     function handleForm(e) {
       e.preventDefault();
@@ -642,14 +597,12 @@
       });
     }
 
-    // LIGHTBOX
     let cur = 0;
     const imgs = ['P1119337.JPG.jpeg','P1119307.JPG.jpeg','P1119308.JPG.jpeg','P1119316.JPG.jpeg','P1119317.JPG.jpeg','P1119320.JPG.jpeg','P1119322.JPG.jpeg','P1119323.JPG.jpeg','P1119324.JPG.jpeg','P1119325.JPG.jpeg','P1119326.JPG.jpeg','P1119329.JPG.jpeg','P1119332.JPG.jpeg','P1119333.JPG.jpeg','P1119334.JPG.jpeg','P1119335.JPG.jpeg'];
     function openLightbox(i) { cur=i; document.getElementById('lbImg').src=imgs[i]; document.getElementById('lightbox').classList.add('active'); document.body.style.overflow='hidden'; }
     function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); document.body.style.overflow=''; }
     function changeLightbox(d) { cur=(cur+d+imgs.length)%imgs.length; document.getElementById('lbImg').src=imgs[cur]; }
 
-    // HERO SLIDER
     const sl = document.getElementById('heroSlider');
     ['P1119337.JPG.jpeg','P1119307.JPG.jpeg','P1119308.JPG.jpeg','P1119316.JPG.jpeg','P1119317.JPG.jpeg','P1119318.JPG.jpeg','P1119320.JPG.jpeg','P1119322.JPG.jpeg','P1119323.JPG.jpeg','P1119324.JPG.jpeg','P1119325.JPG.jpeg','P1119326.JPG.jpeg','P1119329.JPG.jpeg','P1119332.JPG.jpeg','P1119333.JPG.jpeg','P1119334.JPG.jpeg','P1119335.JPG.jpeg'].forEach((s,i) => {
       const d = document.createElement('div');
@@ -665,14 +618,12 @@
       s[ci].classList.add('active');
     }, 5000);
 
-    // BOTTOM NAV ACTIVE
     window.addEventListener('scroll', () => {
       let a='';
       ['home','gallery','overview','amenities','connectivity','specs','contact'].forEach(id => { const el=document.getElementById(id); if(el&&pageYOffset>=el.offsetTop-300) a=id; });
       document.querySelectorAll('.bni').forEach(x => x.classList.toggle('active', x.getAttribute('href')==='#'+a));
     });
 
-    // SCROLL REVEAL
     const obs = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'} }), {threshold:.1});
     document.querySelectorAll('.fc,.acard,.sitem,.gi,.ov-img,.ov-content,.lm-card,.map-wrap').forEach(el => {
       el.style.opacity='0'; el.style.transform='translateY(22px)';
