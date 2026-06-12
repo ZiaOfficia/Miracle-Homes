@@ -332,9 +332,11 @@
       <p class="h-eye"></p>
       <h1 class="h-title">Miracle Homes</h1>
       <p class="h-phase">Phase &nbsp;·&nbsp; II</p>
-      <div class="h-loc">Safedabad, Barabanki</div>
+      <div class="h-loc">Lucknow SCR (State Capital Region) Safedabad, Barabanki</div>
       <div class="hbtns">
-        <a href="Miracle Home Phase-II.pdf" download class="btn-ghost">Download Brochure</a>
+        <a href="javascript:void(0)" onclick="openBrochureModal()" class="btn-ghost">
+    Download Brochure
+</a>
       </div>
     </div>
     <div class="hscroll"><div class="smouse"></div><span>Discover</span></div>
@@ -389,11 +391,13 @@
           <div class="crow"><div class="cico"><i class="fas fa-phone"></i></div><div class="ctxt"><h5>Call Us</h5><p>+91 8318592458</p></div></div>
           <div class="crow"><div class="cico"><i class="fas fa-map-marker-alt"></i></div><div class="ctxt"><h5>Where We Are</h5><p>Safedabad, Barabanki — near Ayodhya Highway</p></div></div>
         </div>
-        <a href="Miracle Home Phase-II.pdf" download class="brlink"><i class="fas fa-file-pdf"></i> Download Brochure</a>
+        <a href="javascript:void(0)" onclick="openBrochureModal()" class="brlink">
+    <i class="fas fa-file-pdf"></i> Download Brochure
+</a>
       </div>
-      <div class="cform">
+      <div class="cform" id="brochureForm" style="display:none;">
         <h3 class="ftitle">Interested ?</h3>
-        <form onsubmit="handleForm(event)">
+        <form onsubmit="downloadBrochure(event)">
           <div class="fg"><label>Your Name</label><input type="text" placeholder="e.g. Ramesh Kumar" required></div>
           <div class="fg"><label>Mobile Number</label><input type="tel" placeholder="+91" required></div>
           <div class="fg"><label>What do you need?</label><select><option>I want to visit the site</option><option>I want to know the price</option><option>I have other questions</option></select></div>
@@ -418,7 +422,7 @@
           <div class="fc"><div class="fi"><i class="fas fa-tree"></i></div><span>Garden & Open Space</span></div>
           <div class="fc"><div class="fi"><i class="fas fa-map-marker-alt"></i></div><span>Near Ayodhya Highway</span></div>
           <div class="fc"><div class="fi"><i class="fas fa-sun"></i></div><span>Solar Street Lights</span></div>
-          <div class="fc"><div class="fi"><i class="fas fa-tint"></i></div><span>Rainwater Saving System</span></div>
+          <div class="fc"><div class="fi"><i class="fas fa-tint"></i></div><span>Rainwater Harvesting</span></div>
         </div>
       </div>
     </div>
@@ -533,14 +537,56 @@
           <img src="Logo_03_page-0001.jpg" alt="Miracle Homes" class="logo-img">
           <div class="logo-txt"><h1>Miracle Homes</h1><small>Safedabad, Barabanki</small></div>
         </a>
-        <p>A trusted housing project by <strong>Max Infra Ventures</strong>. We build honest, good quality homes for families near Ayodhya Highway, Barabanki.</p>
+        <p>A trusted housing project by <strong>Maxmiracle Buildcare LLP</strong>. We build honest, good quality homes for families near Ayodhya Highway, Barabanki.</p>
       </div>
       <div class="fc3"><h4>Navigation</h4><ul class="fl"><li><a href="#home">Home</a></li><li><a href="#overview">Overview</a></li><li><a href="#amenities">Amenities</a></li><li><a href="#gallery">Showcase</a></li><li><a href="#contact">Contact</a></li></ul></div>
       <div class="fc3"><h4>Legal</h4><ul class="fl"><li><a href="#" onclick="openModal()">Privacy Policy</a></li><li><a href="#" onclick="openModal()">Terms of Use</a></li><li><a href="Miracle Home Phase-II.pdf" download>Brochure</a></li><li><a href="#" onclick="openModal()">RERA Details</a></li></ul></div>
-      <div class="fc3"><h4>Corporate</h4><p><strong>Developed By:</strong><br></p><p style="margin-top:14px"><strong>Marketed By:</strong><br>MAX INFRA VENTURES PVT. LTD.</p></div>
+      <div class="fc3"><h4>Corporate</h4><p><strong>Developed By: Maxmiracle Buildcare LLP</strong><br></p><p style="margin-top:14px"><strong>Marketed By:</strong><br>MAX INFRA VENTURES PVT. LTD.</p></div>
     </div>
     <div class="fbot"><p>© 2026 <span>Miracle Home Phase II</span>. All Rights Reserved.</p><p>Crafted with Excellence</p></div>
   </footer>
+  <div class="modal" id="brochureModal">
+  <div class="mbox">
+    <div class="mcls" onclick="closeBrochureModal()">&times;</div>
+
+    <div class="mhd">
+      <h3>Download Brochure</h3>
+      <p>Fill your details to download brochure.</p>
+    </div>
+
+    <div class="mbd">
+      <form onsubmit="downloadBrochure(event)">
+        <div class="fg">
+          <label>Your Name</label>
+          <input type="text" required>
+        </div>
+
+        <div class="fg">
+          <label>Mobile Number</label>
+          <input type="tel" required>
+        </div>
+
+        <div class="fg">
+          <label>Email</label>
+          <input type="email" required>
+        </div>
+
+        <div class="fg">
+          <label>What do you need?</label>
+          <select>
+            <option>I want to visit the site</option>
+            <option>I want to know the price</option>
+            <option>I have other questions</option>
+          </select>
+        </div>
+
+        <button type="submit" class="bsub">
+          Submit & Download
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
 
   <script>
     window.addEventListener('scroll', () => {
@@ -631,5 +677,50 @@
       obs.observe(el);
     });
   </script>
+  <script>
+function openBrochureModal() {
+    document.getElementById("brochureModal").classList.add("active");
+}
+
+function closeBrochureModal() {
+    document.getElementById("brochureModal").classList.remove("active");
+}
+
+function downloadBrochure(event) {
+    event.preventDefault();
+
+    const form = event.target;
+
+    const data = {
+        name: form.querySelector('input[type="text"]').value,
+        phone: form.querySelector('input[type="tel"]').value,
+        interest: form.querySelector('select').value,
+        timestamp: new Date().toLocaleString('en-IN')
+    };
+
+    fetch(GOOGLE_SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    }).then(() => {
+
+        closeBrochureModal();
+
+        const link = document.createElement("a");
+        link.href = "Miracle Home Phase-II.pdf";
+        link.download = "Miracle Home Phase-II.pdf";
+        link.click();
+
+        form.reset();
+
+    }).catch(() => {
+        alert("Something went wrong");
+    });
+}
+</script>
+  
 </body>
 </html>
