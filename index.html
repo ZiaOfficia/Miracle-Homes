@@ -356,9 +356,9 @@
       <p class="sec-sub">These are real photos from the project</p>
     </div>
     <div class="gg">
-      <div class="gi g-lg" onclick="openLightbox(0)"><img src="P1119337.JPG.jpeg" alt="Overview"><div class="gl"><span>Outside View</span><h4>Beautiful Building</h4></div></div>
+      <div class="gi g-lg" onclick="openLightbox(0)"><img src="P1119337.JPG.png" alt="Overview"><div class="gl"><span>Outside View</span><h4>Beautiful Building</h4></div></div>
       <div class="gi g-tl" onclick="openLightbox(1)"><img src="newgate.jpeg" alt="Entrance"><div class="gl"><span>Main Gate</span><h4>Safe & Secure Entry</h4></div></div>
-      <div class="gi" onclick="openLightbox(2)"><img src="phase2mainbuilding.png" alt="Gate"><div class="gl"><span>Security</span><h4>Guard 24 Hours</h4></div></div>
+      <div class="gi" onclick="openLightbox(2)"><img src="phase2mainbuilding.jpeg" alt="Gate"><div class="gl"><span>Security</span><h4>Guard 24 Hours</h4></div></div>
       <div class="gi g-wd" onclick="openLightbox(3)"><img src="lanesss.jpeg" alt="Lanes"><div class="gl"><span>Society Roads</span><h4>Wide & Clean Streets</h4></div></div>
       <div class="gi" onclick="openLightbox(4)"><img src="Night4.jpeg" alt="Elevation"><div class="gl"><span>Night View</span><h4>Looks Beautiful at Night</h4></div></div>
       <div class="gi g-lg" onclick="openLightbox(5)"><img src="P1119320.JPG.jpeg" alt="Interior"><div class="gl"><span>Inside the Home</span><h4>Spacious Rooms</h4></div></div>
@@ -644,13 +644,34 @@
     }
 
     let cur = 0;
-    const imgs = ['P1119337.JPG.jpeg','P1119307.JPG.jpeg','P1119308.JPG.jpeg','P1119316.JPG.jpeg','P1119317.JPG.jpeg','P1119320.JPG.jpeg','P1119322.JPG.jpeg','P1119323.JPG.jpeg','P1119324.JPG.jpeg','P1119325.JPG.jpeg','P1119326.JPG.jpeg','P1119329.JPG.jpeg','P1119332.JPG.jpeg','P1119333.JPG.jpeg','P1119334.JPG.jpeg','P1119335.JPG.jpeg'];
+    const imgs =  ['P1119337.JPG.png','newgate.jpeg','phase2mainbuilding.jpeg','lanesss.jpeg','Night4.jpeg','P1119320.JPG.jpeg','redbed.jpeg','P1119323.JPG.jpeg','Night1.jpeg','Night2.jpeg','P1119326.JPG.jpeg','P1119329.JPG.jpeg','Night3.jpeg','Plaster.jpeg'];
+
     function openLightbox(i) { cur=i; document.getElementById('lbImg').src=imgs[i]; document.getElementById('lightbox').classList.add('active'); document.body.style.overflow='hidden'; }
     function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); document.body.style.overflow=''; }
     function changeLightbox(d) { cur=(cur+d+imgs.length)%imgs.length; document.getElementById('lbImg').src=imgs[cur]; }
 
     const sl = document.getElementById('heroSlider');
-    ['P1119337.JPG.jpeg','P1119307.JPG.jpeg','P1119308.JPG.jpeg','P1119316.JPG.jpeg','P1119317.JPG.jpeg','P1119318.JPG.jpeg','P1119320.JPG.jpeg','P1119322.JPG.jpeg','P1119323.JPG.jpeg','P1119324.JPG.jpeg','P1119325.JPG.jpeg','P1119326.JPG.jpeg','P1119329.JPG.jpeg','P1119332.JPG.jpeg','P1119333.JPG.jpeg','P1119334.JPG.jpeg','P1119335.JPG.jpeg'].forEach((s,i) => {
+    [
+'P1119337.JPG.png',
+'P1119307.JPG.jpeg',
+'P1119318.JPG.jpeg',
+'P1119320.JPG.jpeg',
+'P1119323.JPG.jpeg',
+'P1119326.JPG.jpeg',
+'P1119329.JPG.jpeg',
+'P1119333.JPG.jpeg',
+'newgate.jpeg',
+'phase2mainbuilding.jpeg',
+'lanesss.jpeg',
+'Night4.jpeg',
+'redbed.jpeg',
+'Night1.jpeg',
+'Night2.jpeg',
+'P1119326.JPG.jpeg',
+'P1119329.JPG.jpeg',
+'Night3.jpeg',
+'Plaster.jpeg',
+].forEach((s,i) => {
       const d = document.createElement('div');
       d.className = 'hslide' + (i===0?' active':'');
       d.style.backgroundImage = `url('${s}')`;
